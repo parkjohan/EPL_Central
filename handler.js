@@ -42,10 +42,11 @@ app.get('/~shaibis/seasons',function(req,res){
   res.sendFile('./seasons.html', {root : __dirname});
 });
 
-//app.get('/plot-synopsis',function(req,res){
+app.get('/~shaibis/champions',function(req,res){
   
-  //res.render('plot.html');
-//});
+  res.sendFile('./champions.html', {root : __dirname});
+});
+
 
 app.use(function(req,res){
   res.type('text/plain');
