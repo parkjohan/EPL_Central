@@ -52,8 +52,8 @@ app.get('/',function(req,res){
         });
       });
     });
-  });
-});*/
+  });*/
+});
 
 app.get('/~shaibis/teams',function(req,res){
 	
