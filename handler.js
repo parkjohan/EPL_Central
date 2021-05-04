@@ -23,8 +23,9 @@ var db = require('./database/db-connector')
 //});
 
 app.get('/',function(req,res){
-
-  /******TESTING ******/
+  res.sendFile('./index.html', {root : __dirname});
+  /*
+  // ******TESTING ******
 	// Define queries
   query1 = 'DROP TABLE IF EXISTS diagnostic;';
   query2 = 'CREATE TABLE diagnostic(id INT PRIMARY KEY AUTO_INCREMENT, text VARCHAR(255) NOT NULL);';
@@ -47,12 +48,12 @@ app.get('/',function(req,res){
 
           // Send the results to the browser
           res.send(JSON.stringify(results));
-          res.sendFile('./index.html', {root : __dirname});
+          //res.sendFile('./index.html', {root : __dirname});
         });
       });
     });
   });
-});
+});*/
 
 app.get('/~shaibis/teams',function(req,res){
 	
