@@ -1,0 +1,56 @@
+<nav class="navbar navbar-inverse">
+    <div class="container-fluid">
+        <div class="navbar-header">
+            <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+                <span class="icon-bar"></span>
+            </button>
+            <a class="navbar-brand" href="/">EPL Central</a>
+        </div>
+        <div class="collapse navbar-collapse" id="myNavbar">
+            <ul class="nav navbar-nav">
+                <li><a href="/">Home</a></li>
+                <li><a href="/~shaibis/teams">Teams</a></li>
+                <li><a href="/~shaibis/players">Players</a></li>
+                <li><a href="/~shaibis/matches">Matches</a></li>
+                <li><a href="/~shaibis/seasons">Seasons</a></li>
+                <li class="active"><a href="/~shaibis/champions">Champions</a></li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+<div class="container-fluid text-center">
+    <div class="row content">
+        <div class="col-sm-2 sidenav">
+
+        </div>
+        <div class="col-sm-8 text-left">
+            <h1>Champions</h1>
+            <p>Only one team can reach the top in the highly competitive EPL. This page shows the champion of the league
+                per season.</p>
+        </div>
+        <div class="form-div">
+            <form action="">
+                <fieldset>
+                    <legend>Submit Champion Data</legend>
+                    <div class="form-div">
+                        <label>Season ID:</label>
+                        <br>
+                        <input type="number" name="season_id">
+                    </div>
+                    <div class="form-div">
+                        <label>Team ID:</label>
+                        <br>
+                        <input type="number" name="team_id">
+                    </div>
+                    <div class="form-div">
+                        <input type="submit" value="submit">
+                    </div>
+                </fieldset>
+
+            </form>
+        </div>
+    </div>
+</div>
