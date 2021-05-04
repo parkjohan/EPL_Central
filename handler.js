@@ -47,7 +47,7 @@ app.get('/',function(req,res){
 
           // Send the results to the browser
           res.send(JSON.stringify(results));
-          //res.sendFile('./index.html', {root : __dirname});
+          res.sendFile('./index.html', {root : __dirname});
         });
       });
     });
