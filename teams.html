@@ -38,7 +38,18 @@
 
             .row.content {
                 height: auto;
+
             }
+        }
+
+        #data-table{
+            border: solid black;
+            width: 100%;
+
+        }
+
+        td, tr, th{
+            border: solid black;
         }
     </style>
 </head>
@@ -77,11 +88,44 @@
                 <p>The EPL is one of the most competitive leagues in the world. Our website will keep track of the most updated team list in the EPL.</p>
                 <h2>WORK IN PROGRESS</h2>
                 <p>A user can add team information using the form. There will be buttons in the generated table that allows the user to delete and update an entry. There will be functionality to select and display certain data. </p>
+                <table id="data-table">
+                    <tr>
+                        <th>Team Name</th>
+                        <th>City</th>
+                        <th>Head Coach Last Name</th>
+                        <th>Top Player ID</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Liverpool Football Club</td>
+                        <td>Liverpool</td>
+                        <td>Klopp</td>
+                        <td>5</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Manchester City Football Club</td>
+                        <td>Manchester</td>
+                        <td>Guardiola</td>
+                        <td>1</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Chelsea Football Club</td>
+                        <td>Chelsea</td>
+                        <td>Tuchel</td>
+                        <td>10</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                </table>
             </div>
             <div class="form-div">
                 <form action="">
                     <fieldset>
-                    <legend>Submit Team Data</legend>
+                    <legend>Insert Team Data</legend>
                         <div class="form-div">
                             <label>Team Name:</label>
                             <br>
@@ -103,7 +147,7 @@
                             <input type="number" name="top_player_id">
                         </div>
                         <div class="form-div">
-                            <input type="submit" value="submit">
+                            <input type="submit" value="Insert">
                         </div>
                     </fieldset>
                     
