@@ -40,6 +40,16 @@
                 height: auto;
             }
         }
+
+        #data-table{
+            border: solid black;
+            width: 100%;
+
+        }
+
+        td, tr, th{
+            border: solid black;
+        }
     </style>
 </head>
 <body>
@@ -77,11 +87,68 @@
                 <p>The players link will take the user to a page that shows the top 25 players in the league. Players can enter the top 25, drop out of the top 25, retire, go out on loan, or get sold to another team in another league. Our website will keep track of the current top 25 players in the EPL.</p>
                 <h2>WORK IN PROGRESS</h2>
                 <p>A user can add player information using the form. There will be buttons in the generated table that allows the user to delete and update an entry. There will be functionality to select and display certain data. </p>
+                <table id="data-table">
+                    <tr>
+                        <th>First Name</th>
+                        <th>Last Name</th>
+                        <th>Team ID</th>
+                        <th>Nationality</th>
+                        <th></th>
+                    </tr>
+                    <tr>
+                        <td>Kevin</td>
+                        <td>De Bruyne</td>
+                        <td>2</td>
+                        <td>Belgium</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Son</td>
+                        <td>Heung-min</td>
+                        <td>4</td>
+                        <td>South Korea</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Bruno</td>
+                        <td>Fernandes</td>
+                        <td>5</td>
+                        <td>Portugal</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Harry</td>
+                        <td>Kane</td>
+                        <td>6</td>
+                        <td>England</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Mohamed</td>
+                        <td>Saleh</td>
+                        <td>1</td>
+                        <td>Egypt</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                    <tr>
+                        <td>Sadio</td>
+                        <td>Mane</td>
+                        <td>1</td>
+                        <td>Senegal</td>
+                        <td><button>Update</button>
+                        <button>Delete</button></td>
+                    </tr>
+                </table>
             </div>
             <div class="form-div">
                 <form action="">
                     <fieldset>
-                    <legend>Submit Player Data</legend>
+                    <legend>Insert Player Data</legend>
                         <div class="form-div">
                             <label>First Name:</label>
                             <br>
@@ -103,7 +170,7 @@
                             <input type="text" name="nationality">
                         </div>
                         <div class="form-div">
-                            <input type="submit" value="submit">
+                            <input type="submit" value="Insert">
                         </div>
                     </fieldset>
                     
