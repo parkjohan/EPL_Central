@@ -22,9 +22,6 @@
 
 <div class="container-fluid text-center">
     <div class="row content">
-        <div class="col-sm-2 sidenav">
-
-        </div>
         <div class="col-sm-8 text-left">
             {{!-- Create a table --}}
             <table>
@@ -45,15 +42,11 @@
 
                 {{!-- Body section --}}
                 <tbody>
-
                     {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
                     {{#each data}}
                     <tr>
                         <td>{{this.id}}</td>
-                        <td>{{this.fname}}</td>
-                        <td>{{this.lname}}</td>
-                        <td>{{this.homeworld}}</td>
-                        <td>{{this.age}}</td>
+                        <td>{{this.title}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -81,3 +74,4 @@
         </div>
     </div>
 </div>
+<script src="/public/scripts/add_match.js"></script>
