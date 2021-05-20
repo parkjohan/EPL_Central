@@ -24,7 +24,7 @@
     <div class="row content">
         <div class="col-sm-8 text-left">
             {{!-- Create a table --}}
-            <table>
+            <table id="players-table">
 
                 {{!-- Header section --}}
                 <thead>
@@ -43,7 +43,7 @@
                 {{!-- Body section --}}
                 <tbody>
 
-                    {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+                    {{!-- For each row --}}
                     {{#each data}}
                     <tr>
                         <td>{{this.id}}</td>
@@ -78,3 +78,4 @@
         </div>
     </div>
 </div>
+<script src="/public/scripts/add_player.js"></script>

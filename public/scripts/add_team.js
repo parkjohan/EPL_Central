@@ -1,8 +1,8 @@
 // Get the objects we need to modify
-let addPersonForm = document.getElementById('add-team-form');
+let addTeamForm = document.getElementById('add-team-form');
 
 // Modify the objects we need
-addPersonForm.addEventListener("submit", function (e) {
+addTeamForm.addEventListener("submit", function (e) {
 
     // Prevent the form from submitting
     e.preventDefault();
@@ -52,8 +52,7 @@ addPersonForm.addEventListener("submit", function (e) {
 })
 
 
-// Creates a single row from an Object representing a single record from 
-// bsg_people
+// Creates a single row from an Object representing a single record from epl_teams
 addRowToTable = (data) => {
 
     // Get a reference to the current table on the page and clear it out.
@@ -75,9 +74,9 @@ addRowToTable = (data) => {
 
     // Fill the cells with correct data
     idCell.innerText = newRow.id;
-    teamNameCell.innerText = newRow.fname;
-    teamCityCell.innerText = newRow.lname;
-    headCoachLnameCell.innerText = newRow.homeworld;
+    teamNameCell.innerText = newRow.teamName;
+    teamCityCell.innerText = newRow.city;
+    headCoachLnameCell.innerText = newRow.headCoachLname;
 
     // Add the cells to the row 
     row.appendChild(idCell);

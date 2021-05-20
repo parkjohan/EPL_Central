@@ -1,35 +1,35 @@
 // Get the objects we need to modify
-let addPersonForm = document.getElementById('add-person-form-ajax');
+let addPlayerForm = document.getElementById('add-player-form');
 
 // Modify the objects we need
-addPersonForm.addEventListener("submit", function (e) {
+addPlayerForm.addEventListener("submit", function (e) {
 
     // Prevent the form from submitting
     e.preventDefault();
 
     // Get form fields we need to get data from
-    let inputFirstName = document.getElementById("input-fname");
-    let inputLastName = document.getElementById("input-lname");
-    let inputHomeworld = document.getElementById("input-homeworld");
-    let inputAge = document.getElementById("input-age");
+    let inputPlayerFname = document.getElementById("input-playerFname");
+    let inputPlayerLname = document.getElementById("input-playerLname");
+    let inputTeamID = document.getElementById("input-teamID");
+    let inputNationality = document.getElementById("input-nationality");
 
     // Get the values from the form fields
-    let firstNameValue = inputFirstName.value;
-    let lastNameValue = inputLastName.value;
-    let homeworldValue = inputHomeworld.value;
-    let ageValue = inputAge.value;
+    let playerFnameValue = inputPlayerFname.value;
+    let playerLnameValue = inputPlayerLname.value;
+    let teamIDValue = inputTeamID.value;
+    let nationalityValue = inputNationality.value;
 
     // Put our data we want to send in a javascript object
     let data = {
-        fname: firstNameValue,
-        lname: lastNameValue,
-        homeworld: homeworldValue,
-        age: ageValue
+        playerFname: playerFnameValue,
+        playerLname: playerLnameValue,
+        teamID: teamIDValue,
+        nationality: nationalityValue
     }
 
     // Setup our AJAX request
     var xhttp = new XMLHttpRequest();
-    xhttp.open("POST", "/add-match", true);
+    xhttp.open("POST", "/add-player", true);
     xhttp.setRequestHeader("Content-type", "application/json");
 
     // Tell our AJAX request how to resolve
@@ -40,10 +40,10 @@ addPersonForm.addEventListener("submit", function (e) {
             addRowToTable(xhttp.response);
 
             // Clear the input fields for another transaction
-            inputFirstName.value = '';
-            inputLastName.value = '';
-            inputHomeworld.value = '';
-            inputAge.value = '';
+            inputPlayerFname.value = '';
+            inputPlayerLname.value = '';
+            inputTeamID.value = '';
+            inputNationality.value = '';
         }
         else if (xhttp.readyState == 4 && xhttp.status != 200) {
             console.log("There was an error with the input.")
@@ -56,12 +56,11 @@ addPersonForm.addEventListener("submit", function (e) {
 })
 
 
-// Creates a single row from an Object representing a single record from 
-// bsg_people
+// Creates a single row from an Object representing a single record from epl_top_players
 addRowToTable = (data) => {
 
     // Get a reference to the current table on the page and clear it out.
-    let currentTable = document.getElementById("people-table");
+    let currentTable = document.getElementById("players-table");
 
     // Get the location where we should insert the new row (end of table)
     let newRowIndex = currentTable.rows.length;
@@ -73,24 +72,24 @@ addRowToTable = (data) => {
     // Create a row and 4 cells
     let row = document.createElement("TR");
     let idCell = document.createElement("TD");
-    let firstNameCell = document.createElement("TD");
-    let lastNameCell = document.createElement("TD");
-    let homeworldCell = document.createElement("TD");
-    let ageCell = document.createElement("TD");
+    let fNameCell = document.createElement("TD");
+    let lNameCell = document.createElement("TD");
+    let teamIDCell = document.createElement("TD");
+    let nationalityCell = document.createElement("TD");
 
     // Fill the cells with correct data
     idCell.innerText = newRow.id;
-    firstNameCell.innerText = newRow.fname;
-    lastNameCell.innerText = newRow.lname;
-    homeworldCell.innerText = newRow.homeworld;
-    ageCell.innerText = newRow.age;
+    fNameCell.innerText = newRow.playerFname;
+    lNameCell.innerText = newRow.playerLname;
+    teamIDCell.innerText = newRow.teamID;
+    nationalityCell.innerText = newRow.nationality;
 
     // Add the cells to the row 
     row.appendChild(idCell);
-    row.appendChild(firstNameCell);
-    row.appendChild(lastNameCell);
-    row.appendChild(homeworldCell);
-    row.appendChild(ageCell);
+    row.appendChild(fNameCell);
+    row.appendChild(lNameCell);
+    row.appendChild(teamIDCell);
+    row.appendChild(nationalityCell);
 
     // Add the row to the table
     currentTable.appendChild(row);

@@ -1,30 +1,36 @@
 // Get the objects we need to modify
-let addPersonForm = document.getElementById('add-person-form-ajax');
+let addMatchForm = document.getElementById('add-match-form');
 
 // Modify the objects we need
-addPersonForm.addEventListener("submit", function (e) {
+addMatchForm.addEventListener("submit", function (e) {
 
     // Prevent the form from submitting
     e.preventDefault();
 
     // Get form fields we need to get data from
-    let inputFirstName = document.getElementById("input-fname");
-    let inputLastName = document.getElementById("input-lname");
-    let inputHomeworld = document.getElementById("input-homeworld");
-    let inputAge = document.getElementById("input-age");
+    let inputMatchDate = document.getElementById("input-matchDate");
+    let inputTeamHome = document.getElementById("input-teamHome");
+    let inputTeamHomeScore = document.getElementById("input-teamHomeScore");
+    let inputTeamAway = document.getElementById("input-teamAway");
+    let inputTeamAwayScore = document.getElementById("input-teamAwayScore");
+    let inputTeamWon = document.getElementById("input-teamWon");
 
     // Get the values from the form fields
-    let firstNameValue = inputFirstName.value;
-    let lastNameValue = inputLastName.value;
-    let homeworldValue = inputHomeworld.value;
-    let ageValue = inputAge.value;
+    let matchDateValue = inputMatchDate.value;
+    let teamHomeValue = inputTeamHome.value;
+    let teamHomeScoreValue = inputTeamHomeScore.value;
+    let teamAwayValue = inputTeamAway.value;
+    let teamAwayScoreValue = inputTeamAwayScore.value;
+    let teamWonValue = inputTeamWon.value;
 
     // Put our data we want to send in a javascript object
     let data = {
-        fname: firstNameValue,
-        lname: lastNameValue,
-        homeworld: homeworldValue,
-        age: ageValue
+        matchDate: matchDateValue,
+        teamHome: teamHomeValue,
+        teamHomeScore: teamHomeScoreValue,
+        teamAway: teamAwayValue,
+        teamAwayScore: teamAwayScoreValue,
+        teamWon: teamWonValue
     }
 
     // Setup our AJAX request
@@ -40,10 +46,12 @@ addPersonForm.addEventListener("submit", function (e) {
             addRowToTable(xhttp.response);
 
             // Clear the input fields for another transaction
-            inputFirstName.value = '';
-            inputLastName.value = '';
-            inputHomeworld.value = '';
-            inputAge.value = '';
+            inputMatchDate.value = '';
+            inputTeamHome.value = '';
+            inputTeamHomeScore.value = '';
+            inputTeamAway.value = '';
+            inputTeamAwayScore.value = '';
+            inputTeamWon.value = '';
         }
         else if (xhttp.readyState == 4 && xhttp.status != 200) {
             console.log("There was an error with the input.")
@@ -61,7 +69,7 @@ addPersonForm.addEventListener("submit", function (e) {
 addRowToTable = (data) => {
 
     // Get a reference to the current table on the page and clear it out.
-    let currentTable = document.getElementById("people-table");
+    let currentTable = document.getElementById("matches-table");
 
     // Get the location where we should insert the new row (end of table)
     let newRowIndex = currentTable.rows.length;
@@ -73,24 +81,30 @@ addRowToTable = (data) => {
     // Create a row and 4 cells
     let row = document.createElement("TR");
     let idCell = document.createElement("TD");
-    let firstNameCell = document.createElement("TD");
-    let lastNameCell = document.createElement("TD");
-    let homeworldCell = document.createElement("TD");
-    let ageCell = document.createElement("TD");
+    let matchDateCell = document.createElement("TD");
+    let teamHomeCell = document.createElement("TD");
+    let teamHomeScoreCell = document.createElement("TD");
+    let teamAwayCell = document.createElement("TD");
+    let teamAwayScoreCell = document.createElement("TD");
+    let teamWonCell = document.createElement("TD");
 
     // Fill the cells with correct data
     idCell.innerText = newRow.id;
-    firstNameCell.innerText = newRow.fname;
-    lastNameCell.innerText = newRow.lname;
-    homeworldCell.innerText = newRow.homeworld;
-    ageCell.innerText = newRow.age;
+    matchDateCell.innerText = newRow.matchDate;
+    teamHomeCell.innerText = newRow.teamHome;
+    teamHomeScoreCell.innerText = newRow.teamHomeScore;
+    teamAwayCell.innerText = newRow.teamAway;
+    teamAwayScoreCell.innerText = newRow.teamAwayScore;
+    teamWonCell.innerText = newRow.teamWon;
 
     // Add the cells to the row 
     row.appendChild(idCell);
-    row.appendChild(firstNameCell);
-    row.appendChild(lastNameCell);
-    row.appendChild(homeworldCell);
-    row.appendChild(ageCell);
+    row.appendChild(matchDateCell);
+    row.appendChild(teamHomeCell);
+    row.appendChild(teamHomeScoreCell);
+    row.appendChild(teamAwayCell);
+    row.appendChild(teamAwayScoreCell);
+    row.appendChild(teamWonCell);
 
     // Add the row to the table
     currentTable.appendChild(row);
