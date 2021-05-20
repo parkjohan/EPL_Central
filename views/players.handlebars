@@ -47,10 +47,10 @@
                     {{#each data}}
                     <tr>
                         <td>{{this.id}}</td>
-                        <td>{{this.fname}}</td>
-                        <td>{{this.lname}}</td>
-                        <td>{{this.homeworld}}</td>
-                        <td>{{this.age}}</td>
+                        <td>{{this.playerFname}}</td>
+                        <td>{{this.playerLname}}</td>
+                        <td>{{this.teamID}}</td>
+                        <td>{{this.nationality}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -60,18 +60,18 @@
             {{!-- Form to add a record to the table --}}
             <h2>Adding Data with AJAX</h2>
             <p>To add a new person, please enter their information below and click 'Submit'!</p>
-            <form id="add-person-form-ajax">
-                <label for="input-fname">First Name: </label>
-                <input type="text" name="input-fname" id="input-fname">
+            <form id="add-player-form">
+                <label for="input-playerFname">First Name: </label>
+                <input type="text" name="input-playerFname" id="input-playerFname">
 
-                <label for="input-lname">Last Name: </label>
-                <input type="text" name="input-lname" id="input-lname">
+                <label for="input-playerLname">Last Name: </label>
+                <input type="text" name="input-playerLname" id="input-playerLname">
 
-                <label for="input-homeworld">Homeworld: </label>
-                <input type="number" name="input-homeworld" id="input-homeworld">
+                <label for="input-teamID">Team ID: </label>
+                <input type="number" name="input-teamID" id="input-teamID">
 
-                <label for="input-age">Age: </label>
-                <input type="number" name="input-age" id="input-age">
+                <label for="input-nationality">Nationality: </label>
+                <input type="text" name="input-nationality" id="input-nationality">
 
                 <input type="submit">
             </form>
