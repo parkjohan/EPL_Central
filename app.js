@@ -25,18 +25,23 @@ app.get('/', function (req, res) {
 })
 
 app.get('/players', function (req, res) {
-    let query1 = "SELECT * FROM bsg_people;";                   // Define our query
+    //let query1 = "SELECT * FROM bsg_people;";                   // Define our query
 
-    db.pool.query(query1, function (error, rows, fields) {      // Execute the query
-        res.render('players', { data: rows });                    // Render the index.handlebars file, and also send the renderer
-    })                                                          // an object where 'data' is equal to the 'rows' we
-});                                                             // received back from the query
+    //db.pool.query(query1, function (error, rows, fields) {      // Execute the query
+      //  res.render('players', { data: rows });                  // Render the index.handlebars file, and also send the renderer
+    //})                                                         
+    res.render('players')
+});                                                            
+
+app.post('/add-player', function (req, res) {
+    res.render("HELLO THIS WORKS");
+});
 
 app.get('/matches', function (req, res) {
     let matchQuery = "SELECT * FROM bsg_cert;";
 
     db.pool.query(matchQuery, function (err, rows, fields) {
-        res.render('matches', {data: rows});
+        res.render('matches', { data: rows });
     })
 });
 
