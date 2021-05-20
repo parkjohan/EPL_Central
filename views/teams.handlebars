@@ -50,10 +50,9 @@
                     {{#each data}}
                     <tr>
                         <td>{{this.id}}</td>
-                        <td>{{this.fname}}</td>
-                        <td>{{this.lname}}</td>
-                        <td>{{this.homeworld}}</td>
-                        <td>{{this.age}}</td>
+                        <td>{{this.teamName}}</td>
+                        <td>{{this.city}}</td>
+                        <td>{{this.headCoachLname}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -61,20 +60,17 @@
         </div>
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
-            <h2>Adding Data with AJAX</h2>
-            <p>To add a new person, please enter their information below and click 'Submit'!</p>
-            <form id="add-person-form-ajax">
-                <label for="input-fname">First Name: </label>
-                <input type="text" name="input-fname" id="input-fname">
+            <h2>Adding a new EPL team</h2>
+            <p>To add a new EPL team, please enter their information below and click 'Submit'!</p>
+            <form id="add-team-form">
+                <label for="input-teamName">Team Name: </label>
+                <input type="text" name="input-teamName" id="input-teamName">
 
-                <label for="input-lname">Last Name: </label>
-                <input type="text" name="input-lname" id="input-lname">
+                <label for="input-city">City: </label>
+                <input type="text" name="input-city" id="input-city">
 
-                <label for="input-homeworld">Homeworld: </label>
-                <input type="number" name="input-homeworld" id="input-homeworld">
-
-                <label for="input-age">Age: </label>
-                <input type="number" name="input-age" id="input-age">
+                <label for="input-headCoachLname">Head Coach Last Name: </label>
+                <input type="number" name="input-headCoachLname" id="input-headCoachLname">
 
                 <input type="submit">
             </form>
