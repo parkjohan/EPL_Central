@@ -27,7 +27,7 @@
         </div>
         <div class="col-sm-8 text-left">
             {{!-- Create a table --}}
-            <table>
+            <table id="team-table">
 
                 {{!-- Header section --}}
                 <thead>
@@ -46,52 +46,35 @@
                 {{!-- Body section --}}
                 <tbody>
 
-                    {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+                    {{!-- For each row --}}
                     {{#each data}}
                     <tr>
                         <td>{{this.id}}</td>
-                        <td>{{this.fname}}</td>
-                        <td>{{this.lname}}</td>
-                        <td>{{this.homeworld}}</td>
-                        <td>{{this.age}}</td>
+                        <td>{{this.teamName}}</td>
+                        <td>{{this.city}}</td>
+                        <td>{{this.headCoachLname}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
             </table>
         </div>
         <div class="col-sm-2 sidenav">
-            <<h2>Add Team</h2>
-            <div class="form-div">
-                <form action="">
-                    <fieldset>
-                    <legend>Insert Team Data</legend>
-                        <div class="form-div">
-                            <label>Team Name:</label>
-                            <br>
-                            <input type="text" name="team_name">
-                        </div>
-                        <div class="form-div">
-                            <label>City:</label>
-                            <br>
-                            <input type="text" name="city">
-                        </div>
-                        <div class="form-div">
-                            <label>Head Coach Last Name:</label>
-                            <br>
-                            <input type="text" name="coach_last_name">
-                        </div>
-                        <div class="form-div">
-                            <label>Top Player ID:</label>
-                            <br>
-                            <input type="number" name="top_player_id">
-                        </div>
-                        <div class="form-div">
-                            <input type="submit" value="Insert">
-                        </div>
-                    </fieldset>
-                    
-                </form>
-            </div>
+            {{!-- Form to add a record to the table --}}
+            <h2>Adding a new EPL team</h2>
+            <p>To add a new EPL team, please enter their information below and click 'Submit'!</p>
+            <form id="add-team-form">
+                <label for="input-teamName">Team Name: </label>
+                <input type="text" name="input-teamName" id="input-teamName">
+
+                <label for="input-city">City: </label>
+                <input type="text" name="input-city" id="input-city">
+
+                <label for="input-headCoachLname">Head Coach Last Name: </label>
+                <input type="number" name="input-headCoachLname" id="input-headCoachLname">
+
+                <input type="submit">
+            </form>
         </div>
     </div>
 </div>
+<script src="/public/scripts/add_team.js"></script>

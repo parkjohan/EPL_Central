@@ -9,7 +9,7 @@
         </div>
         <div class="collapse navbar-collapse" id="myNavbar">
             <ul class="nav navbar-nav">
-                <li><a href="/">Home</a></li>
+                <li><a href="/">EPL Central</a></li>
                 <li><a href="/teams">Teams</a></li>
                 <li class="active"><a href="/players">Players</a></li>
                 <li><a href="/matches">Matches</a></li>
@@ -22,12 +22,9 @@
 
 <div class="container-fluid text-center">
     <div class="row content">
-        <div class="col-sm-2 sidenav">
-
-        </div>
         <div class="col-sm-8 text-left">
             {{!-- Create a table --}}
-            <table>
+            <table id="players-table">
 
                 {{!-- Header section --}}
                 <thead>
@@ -46,14 +43,14 @@
                 {{!-- Body section --}}
                 <tbody>
 
-                    {{!-- For each row, print the id, fname, lname, homeworld and age, in order --}}
+                    {{!-- For each row --}}
                     {{#each data}}
                     <tr>
                         <td>{{this.id}}</td>
-                        <td>{{this.fname}}</td>
-                        <td>{{this.lname}}</td>
-                        <td>{{this.homeworld}}</td>
-                        <td>{{this.age}}</td>
+                        <td>{{this.playerFname}}</td>
+                        <td>{{this.playerLname}}</td>
+                        <td>{{this.teamID}}</td>
+                        <td>{{this.nationality}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -62,22 +59,23 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <h2>Adding Data with AJAX</h2>
-            <p>To add a new person, please enter their information below and click 'Submit'!</p>
-            <form id="add-person-form-ajax">
-                <label for="input-fname">First Name: </label>
-                <input type="text" name="input-fname" id="input-fname">
+            <p>To add a new Top Player, please enter their information below and click 'Submit'!</p>
+            <form id="add-player-form">
+                <label for="input-playerFname">First Name: </label>
+                <input type="text" name="input-playerFname" id="input-playerFname">
 
-                <label for="input-lname">Last Name: </label>
-                <input type="text" name="input-lname" id="input-lname">
+                <label for="input-playerLname">Last Name: </label>
+                <input type="text" name="input-playerLname" id="input-playerLname">
 
-                <label for="input-homeworld">Homeworld: </label>
-                <input type="number" name="input-homeworld" id="input-homeworld">
+                <label for="input-teamID">Team ID: </label>
+                <input type="number" name="input-teamID" id="input-teamID">
 
-                <label for="input-age">Age: </label>
-                <input type="number" name="input-age" id="input-age">
+                <label for="input-nationality">Nationality: </label>
+                <input type="text" name="input-nationality" id="input-nationality">
 
                 <input type="submit">
             </form>
         </div>
     </div>
 </div>
+<script src="/public/scripts/add_player.js"></script>
