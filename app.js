@@ -21,7 +21,7 @@ var db = require('./database/db-connector')
 
 // Routes
 app.get('/', function(req, res){
-    let query1 = "SELECT * FROM bsg_people;";               // Define our query
+    let query1 = "SELECT * FROM epl_teams;";               // Define our query
 
     db.pool.query(query1, function(error, rows, fields){    // Execute the query
         res.render('index', {data: rows});                  // Render the index.handlebars file, and also send the renderer
