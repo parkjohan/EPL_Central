@@ -22,13 +22,29 @@ var db = require('./database/db-connector');
 // Routes
 app.get('/', function (req, res) {
     res.render('index')
-})
+});
+
+app.get('/seasons', function (req, res) {
+    let seasonQuery = "SELECT * FROM epl_seasons;";
+
+    db.pool.query(seasonQuery, function (err, rows, fields) {
+        res.render('seasons', { data: rows });
+    })
+});
+
+app.get('/teams', function (req, res) {
+    let teamsQuery = "SELECT * FROM epl_teams;";
+
+    db.pool.query(teamsQuery, function (err, rows, fields) {
+        res.render('seasons', { data: rows });
+    });
+});
 
 app.get('/players', function (req, res) {
-    let query1 = "SELECT * FROM epl_top_players;";                   
+    let playerQuery = "SELECT * FROM epl_top_players;";                   
 
     // Execute the query
-    db.pool.query(query1, function (error, rows, fields) {     
+    db.pool.query(playerQuery, function (error, rows, fields) {     
         res.render('players', { data: rows });                  
     })                                                         
 });                                                            
