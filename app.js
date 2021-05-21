@@ -36,7 +36,7 @@ app.get('/teams', function (req, res) {
     let teamsQuery = "SELECT * FROM epl_teams;";
 
     db.pool.query(teamsQuery, function (err, rows, fields) {
-        res.render('seasons', { data: rows });
+        res.render('teams', { data: rows });
     });
 });
 
