@@ -1,51 +1,121 @@
-/*
+
 // App Setup
-var exphbs = require('express-handlebars');
+var handlebars = require('express-handlebars');
 var express = require('express');
 var app = express();
+
+app.use(express.json())
+app.use(express.urlencoded({ extended: true }))
+
 PORT = 6570;
 
-app.require('.hbs', exphbs({
-    extname: ".hbs"
+app.engine('.handlebars', handlebars({
+    extname: ".handlebars"
 }));
-app.set('view engine', '.hbs');
+app.set('view engine', 'handlebars');
+
+app.use(express.static(__dirname + '/public'));
 
 // Database
-var db = require('./database/db-connector')
+var db = require('./database/db-connector');
 
 // Routes
-app.get('/', function(req, res){
+app.get('/', function (req, res) {
     res.render('index')
 });
 
-app.get('/matches', function(req, res){
-    res.render('matches')
+app.get('/seasons', function (req, res) {
+    let seasonQuery = "SELECT * FROM epl_seasons;";
+
+    db.pool.query(seasonQuery, function (err, rows, fields) {
+        res.render('seasons', { data: rows });
+    })
 });
 
-app.get('/players', function(req, res){
+app.get('/teams', function (req, res) {
+    let teamsQuery = "SELECT * FROM epl_teams;";
+
+    db.pool.query(teamsQuery, function (err, rows, fields) {
+        res.render('seasons', { data: rows });
+    });
+});
+
+app.get('/players', function (req, res) {
+    let playerQuery = "SELECT * FROM epl_top_players;";                   
+
+    // Execute the query
+    db.pool.query(playerQuery, function (error, rows, fields) {     
+        res.render('players', { data: rows });                  
+    })                                                         
+});                                                            
+
+app.post('/add-player', function (req, res) {
+    res.render("HELLO THIS WORKS?");
+});
+
+app.get('/matches', function (req, res) {
+    let matchQuery = "SELECT * FROM epl_matches;";
+
+    db.pool.query(matchQuery, function (err, rows, fields) {
+        res.render('matches', { data: rows });
+    })
+});
+
+// Insert data to db
+app.post('/add-match', function (req, res) {
+    // Capture the incoming data and parse it back to a JS object
+    let data = req.body;
+
+    // Switch out query info to match our form.
+    // Create the query and run it on the database
+    query1 = `INSERT INTO bsg_people (fname, lname, homeworld, age) VALUES ('${data.fname}', '${data.lname}', ${homeworld}, ${age})`;
+    db.pool.query(query1, function (error, rows, fields) {
+
+        // Check to see if there was an error
+        if (error) {
+
+            // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
+            console.log(error)
+            res.sendStatus(400);
+        }
+        else {
+            // If there was no error, perform a SELECT * on bsg_people
+            query2 = `SELECT * FROM bsg_people;`;
+            db.pool.query(query2, function (error, rows, fields) {
+
+                // If there was an error on the second query, send a 400
+                if (error) {
+
+                    // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
+                    console.log(error);
+                    res.sendStatus(400);
+                }
+                // If all went well, send the results of the query back and display the table
+                else {
+                    res.send(rows);
+                }
+            })
+        }
+    })
+});
+
+app.get('/players', function (req, res) {
     res.render('players')
 });
 
-app.get('/seasons', function(req, res){
+app.get('/seasons', function (req, res) {
     res.render('seasons')
 });
 
-app.get('/teams', function(req, res){
+app.get('/teams', function (req, res) {
     res.render('teams')
 });
 
-app.get('/champions', function(req, res){
+app.get('/champions', function (req, res) {
     res.render('champions')
 });
 
-
 // Listener
-app.listen(PORT, function(){            // This is the basic syntax for what is called the 'listener' which receives incoming requests on the specified PORT.
+app.listen(PORT, function () {            // This is the basic syntax for what is called the 'listener' which receives incoming requests on the specified PORT.
     console.log('Express started on http://localhost:' + PORT + '; press Ctrl-C to terminate.')
 });
-
-
-
-// This is using handlebars and express for templating.
-// We can switch it out when we want making sure it works on flip server too.
-*/
