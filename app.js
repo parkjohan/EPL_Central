@@ -36,7 +36,7 @@ app.get('/teams', function (req, res) {
     let teamsQuery = "SELECT * FROM epl_teams;";
 
     db.pool.query(teamsQuery, function (err, rows, fields) {
-        res.render('seasons', { data: rows });
+        res.render('teams', { data: rows });
     });
 });
 
@@ -68,7 +68,7 @@ app.post('/add-match', function (req, res) {
 
     // Switch out query info to match our form.
     // Create the query and run it on the database
-    query1 = `INSERT INTO bsg_people (fname, lname, homeworld, age) VALUES ('${data.fname}', '${data.lname}', ${homeworld}, ${age})`;
+    query1 = `INSERT INTO epl_matches (matchDate, teamHome, teamHomeScore, teamAway, teamAwayScore, teamWon) VALUES ('${data.matchDate}', '${data.teamHome}', '${data.teamHomeScore}', '${data.teamAway}', '${data.teamAwayScore}', '${data.teamWon}')`;
     db.pool.query(query1, function (error, rows, fields) {
 
         // Check to see if there was an error
@@ -80,7 +80,7 @@ app.post('/add-match', function (req, res) {
         }
         else {
             // If there was no error, perform a SELECT * on bsg_people
-            query2 = `SELECT * FROM bsg_people;`;
+            query2 = `SELECT * FROM epl_matches;`;
             db.pool.query(query2, function (error, rows, fields) {
 
                 // If there was an error on the second query, send a 400
