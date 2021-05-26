@@ -35,11 +35,9 @@
                     {{!-- For just the first row, we print each key of the row object as a header cell so we
                     know what each column means when the page renders --}}
                     <tr>
-                        {{#each data.[0]}}
-                        <th>
-                            {{@key}}
-                        </th>
-                        {{/each}}
+                        <th>ID</th>
+                        <th>Season ID</th>
+                        <th>Team ID</th>
                     </tr>
                 </thead>
 
@@ -50,10 +48,8 @@
                     {{#each data}}
                     <tr>
                         <td>{{this.id}}</td>
-                        <td>{{this.fname}}</td>
-                        <td>{{this.lname}}</td>
-                        <td>{{this.homeworld}}</td>
-                        <td>{{this.age}}</td>
+                        <td>{{this.seasonID}}</td>
+                        <td>{{this.teamID}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -66,15 +62,19 @@
             <form id="add-person-form-ajax">
                 <label for="input-fname">First Name: </label>
                 <input type="text" name="input-fname" id="input-fname">
+                <br>
 
                 <label for="input-lname">Last Name: </label>
                 <input type="text" name="input-lname" id="input-lname">
+                <br>
 
                 <label for="input-homeworld">Homeworld: </label>
                 <input type="number" name="input-homeworld" id="input-homeworld">
+                <br>
 
                 <label for="input-age">Age: </label>
                 <input type="number" name="input-age" id="input-age">
+                <br>
 
                 <input type="submit">
             </form>
