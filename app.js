@@ -57,8 +57,9 @@ app.get('/teams', function (req, res) {
     });
 });
 
-// POST Routes
+// POST Routes --- INSERT data into the db
 app.post('/add-team', function (req, res) {
+
     // Get the form data from request body
     let data = req.body;
 
@@ -127,7 +128,6 @@ app.post('/add-player', function (req, res) {
     })
 });
 
-// Insert data to db
 app.post('/add-match', function (req, res) {
     // Capture the incoming data and parse it back to a JS object
     let data = req.body;
@@ -196,6 +196,14 @@ app.post('/add-season', function (req, res) {
         })
     })
 })
+
+// UPDATE Routes
+app.post('/update-player/:id', function (req, res) {
+    let updatePlayerQuery = "UPDATE epl_top_players SET playerFname=?, playerLname=?, teamID=?, nationality=?, WHERE id=?";
+    db.pool.query(updatePlayerQuery, function (err, result) {
+        if (err) throw err;
+    });
+});
 
 // Listener
 app.listen(PORT, function () {            // This is the basic syntax for what is called the 'listener' which receives incoming requests on the specified PORT.
