@@ -22,7 +22,7 @@
 
 <div class="container-fluid text-center">
     <div class="row content">
-          <div class="col-sm-2 sidenav">
+<div class="col-sm-2 sidenav">
 
         </div>
         <div class="col-sm-8 text-left">
@@ -38,6 +38,7 @@
                         <th>ID</th>
                         <th>First Name</th>
                         <th>Last name</th>
+			<th>Team ID</th>
                         <th>Nationality</th>
                     </tr>
                 </thead>
@@ -51,6 +52,7 @@
                         <td>{{this.id}}</td>
                         <td>{{this.playerFname}}</td>
                         <td>{{this.playerLname}}</td>
+                        <td>{{this.teamID}}</td>
                         <td>{{this.nationality}}</td>
                     </tr>
                     {{/each}}
@@ -60,19 +62,23 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <h2>Add a new Top Player</h2>
-            <p>To add a new Top Player, please enter their information below and click 'Submit'!</p>
             <form id="add-player-form">
                 <label for="input-playerFname">First Name: </label>
+		<br>
                 <input type="text" name="input-playerFname" id="input-playerFname">
-
+		<br>
                 <label for="input-playerLname">Last Name: </label>
+		<br>
                 <input type="text" name="input-playerLname" id="input-playerLname">
-
+		<br>
                 <label for="input-teamID">Team ID: </label>
+		<br>
                 <input type="number" name="input-teamID" id="input-teamID">
-
+		<br>
                 <label for="input-nationality">Nationality: </label>
+		<br>
                 <input type="text" name="input-nationality" id="input-nationality">
+		<br>
 
                 <input type="submit">
             </form>
