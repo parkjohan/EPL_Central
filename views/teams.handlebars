@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse">
+<nav class="navbar navbar-inverse id="outerNav">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,10 +35,12 @@
                     {{!-- For just the first row, we print each key of the row object as a header cell so we
                     know what each column means when the page renders --}}
                     <tr>
-                        <th>ID</th>
-                        <th>Team Name</th>
-                        <th>City</th>
-                        <th>Head Coach</th>
+                      <th>ID</th>
+		      <th>Team Name</th>
+                      <th>City</th>
+                      <th>Head Coach</th>
+		      <th></th>
+		      <th></th>
                     </tr>
                 </thead>
 
@@ -48,10 +50,12 @@
                     {{!-- For each row --}}
                     {{#each data}}
                     <tr>
-                        <td>{{this.id}}</td>
+			<td>{{this.id}}</td>
                         <td>{{this.teamName}}</td>
                         <td>{{this.city}}</td>
                         <td>{{this.headCoachLname}}</td>
+			<td><input id="delete-data" type="submit" value="Delete"></td>
+			<td><input id="update-data" type="submit" value="Update"></td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -60,17 +64,19 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <h2>Add a new EPL team</h2>
-            <p>To add a new EPL team, please enter their information below and click 'Submit'!</p>
             <form id="add-team-form">
                 <label for="input-teamName">Team Name: </label>
+		<br>
                 <input type="text" name="input-teamName" id="input-teamName">
-
+		<br>
                 <label for="input-city">City: </label>
+		<br>
                 <input type="text" name="input-city" id="input-city">
-
+		<br>
                 <label for="input-headCoachLname">Head Coach Last Name: </label>
+		<br>
                 <input type="text" name="input-headCoachLname" id="input-headCoachLname">
-
+		<br>
                 <input type="submit">
             </form>
         </div>
