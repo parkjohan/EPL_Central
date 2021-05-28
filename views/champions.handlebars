@@ -48,8 +48,10 @@
                     {{#each data}}
                     <tr>
                         <td>{{this.id}}</td>
-                        <td>{{this.seasonID}}</td>
-                        <td>{{this.teamID}}</td>
+                        <td>{{this.fname}}</td>
+                        <td>{{this.lname}}</td>
+                        <td>{{this.homeworld}}</td>
+                        <td>{{this.age}}</td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -58,24 +60,23 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <h2>Adding a New Champion</h2>
-            <p>To add a new champion, please enter their information below and click 'Submit'!</p>
             <form id="add-person-form-ajax">
                 <label for="input-fname">First Name: </label>
+		<br>
                 <input type="text" name="input-fname" id="input-fname">
-                <br>
-
+		<br>
                 <label for="input-lname">Last Name: </label>
+		<br>
                 <input type="text" name="input-lname" id="input-lname">
-                <br>
-
+		<br>
                 <label for="input-homeworld">Homeworld: </label>
+		<br>
                 <input type="number" name="input-homeworld" id="input-homeworld">
-                <br>
-
+		<br>
                 <label for="input-age">Age: </label>
+		<br>
                 <input type="number" name="input-age" id="input-age">
-                <br>
-
+		<br>
                 <input type="submit">
             </form>
         </div>
