@@ -12,8 +12,9 @@
         /* Set gray background color and 100% height */
         .sidenav {
             padding-top: 20px;
-            background-color: #f1f1f1;
+            background-color: #3d195b;
             height: 100%;
+        color: white;
         }
 
         /* On small screens, set height to 'auto' for sidenav and grid */
@@ -28,11 +29,36 @@
             }
         }
 
-    tr,td, th{
+    th{
+        border: solid thin black;
+    background-color: #3d195b;
+    color: white;
+
+        }
+
+    tr,td{
         border: solid thin black;
 
         }
 
     table{
         width: 100%;
+        }
+
+    html{
+        background-image: url(/img/EPL-back.jpg);
+    }
+
+    body{
+        background-color: white transparent;
+        }
+
+    form{
+        color: white;
+        }
+
+
+    #myNavbar{
+        background-color: #3d195b;
+        color: white;
         }
