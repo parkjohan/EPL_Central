@@ -14,7 +14,7 @@
             padding-top: 20px;
             background-color: #3d195b;
             height: 100%;
-        color: white;
+	    color: white;
         }
 
         /* On small screens, set height to 'auto' for sidenav and grid */
@@ -31,12 +31,12 @@
 
     th{
         border: solid thin black;
-    background-color: #3d195b;
-    color: white;
+	background-color: #3d195b;
+	color: white;
 
         }
 
-    tr,td{
+	tr,td{
         border: solid thin black;
 
         }
@@ -45,20 +45,22 @@
         width: 100%;
         }
 
-    html{
-        background-image: url(/img/EPL-back.jpg);
-    }
+	html{
+		background-image: url(/img/EPL-back.jpg);
+	}
 
-    body{
-        background-color: white transparent;
-        }
+	body{
+		background-color: white transparent;
+	    }
 
-    form{
-        color: white;
-        }
+	form{
+		color: white;
+	    }
 
 
-    #myNavbar{
-        background-color: #3d195b;
-        color: white;
-        }
+	#myNavbar{
+		background-color: #3d195b;
+		color: white;
+		}
+
+
