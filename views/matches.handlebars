@@ -22,6 +22,9 @@
 
 <div class="container-fluid text-center">
     <div class="row content">
+<div class="col-sm-2 sidenav">
+
+        </div>
         <div class="col-sm-8 text-left">
             {{!-- Create a table --}}
             <table id="matches-table">
@@ -32,11 +35,13 @@
                     {{!-- For just the first row, we print each key of the row object as a header cell so we
                     know what each column means when the page renders --}}
                     <tr>
-                        {{#each data.[0]}}
-                        <th>
-                            {{@key}}
-                        </th>
-                        {{/each}}
+                        <th>ID</th>
+                        <th>Date</th>
+                        <th>Home Team</th>
+                        <th>Home Team Score</th>
+                        <th>Away Team</th>
+                        <th>Away Team Score</th>
+                        <th>Winning Team</th>
                     </tr>
                 </thead>
 
@@ -60,25 +65,31 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <h2>Add a new Match</h2>
-            <p>To add a new EPL Match, please enter their information below and click 'Submit'!</p>
             <form id="add-match-form">
                 <label for="input-matchDate">Match Date: </label>
+		<br>
                 <input type="date" name="input-matchDate" id="input-matchDate">
-
+		<br>
                 <label for="input-teamHome">Home Team: </label>
+		<br>
                 <input type="text" name="input-teamHome" id="input-teamHome">
-
+		<br>
                 <label for="input-teamHomeScore">Team Home Score: </label>
+		<br>
                 <input type="number" name="input-teamHomeScore" id="input-teamHomeScore">
-
+		<br>
                 <label for="input-teamAway">Away Team: </label>
+		<br>
                 <input type="text" name="input-teamAway" id="input-teamAway">
-
+		<br>
                 <label for="input-teamAwayScore">Team Away Score: </label>
+		<br>
                 <input type="number" name="input-teamAwayScore" id="input-teamAwayScore">
-
+		<br>
                 <label for="input-teamWon">Team Won: </label>
+		<br>
                 <input type="text" name="input-teamWon" id="input-teamWon">
+		<br>
 
                 <input type="submit">
             </form>

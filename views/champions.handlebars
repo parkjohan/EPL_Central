@@ -35,11 +35,9 @@
                     {{!-- For just the first row, we print each key of the row object as a header cell so we
                     know what each column means when the page renders --}}
                     <tr>
-                        {{#each data.[0]}}
-                        <th>
-                            {{@key}}
-                        </th>
-                        {{/each}}
+                        <th>ID</th>
+                        <th>Season ID</th>
+                        <th>Team ID</th>
                     </tr>
                 </thead>
 
@@ -62,20 +60,23 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <h2>Adding a New Champion</h2>
-            <p>To add a new champion, please enter their information below and click 'Submit'!</p>
             <form id="add-person-form-ajax">
                 <label for="input-fname">First Name: </label>
+		<br>
                 <input type="text" name="input-fname" id="input-fname">
-
+		<br>
                 <label for="input-lname">Last Name: </label>
+		<br>
                 <input type="text" name="input-lname" id="input-lname">
-
+		<br>
                 <label for="input-homeworld">Homeworld: </label>
+		<br>
                 <input type="number" name="input-homeworld" id="input-homeworld">
-
+		<br>
                 <label for="input-age">Age: </label>
+		<br>
                 <input type="number" name="input-age" id="input-age">
-
+		<br>
                 <input type="submit">
             </form>
         </div>

@@ -35,11 +35,10 @@
                     {{!-- For just the first row, we print each key of the row object as a header cell so we
                     know what each column means when the page renders --}}
                     <tr>
-                        {{#each data.[0]}}
-                        <th>
-                            {{@key}}
-                        </th>
-                        {{/each}}
+                        <th>ID</th>
+                        <th>Start Date</th>
+                        <th>End Date</th>
+                        <th>Match Of The Season</th>
                     </tr>
                 </thead>
 
@@ -61,17 +60,19 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <h2>Add a new Season</h2>
-            <p>To add a new EPL season, please enter their information below and click 'Submit'!</p>
             <form id="add-season-form">
                 <label for="input-seasonStartDate">Start Date: </label>
+		<br>
                 <input type="date" name="input-seasonStartDate" id="input-seasonStartDate">
-
+		<br>
                 <label for="input-seasonEndDate">End Date: </label>
+		<br>
                 <input type="date" name="input-seasonEndDate" id="input-seasonEndDate">
-
+		<br>
                 <label for="input-matchOfTheSeasonID">Match of the Season ID: </label>
+		<br>
                 <input type="number" name="input-matchOfTheSeasonID" id="input-matchOfTheSeasonID">
-
+		<br>
                 <input type="submit">
             </form>
         </div>
