@@ -12,9 +12,10 @@
         /* Set gray background color and 100% height */
         .sidenav {
             padding-top: 20px;
-            background-color: #3d195b;
-            height: 100%;
+            
 	    color: white;
+            background-color: #f1f1f1;
+            height: 100%;
         }
 
         /* On small screens, set height to 'auto' for sidenav and grid */
@@ -62,5 +63,3 @@
 		background-color: #3d195b;
 		color: white;
 		}
-
-

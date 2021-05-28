@@ -1,32 +1,54 @@
-document.getElementById('add-team-form').addEventListener('click', function(event){
-        
-        var inputTeamName = document.getElementById("input-teamName").value;
-        var inputTeamCity = document.getElementById("input-city").value;
-        var inputHeadCoachLname = document.getElementById("input-headCoachLname").value;
-        var req = new XMLHttpRequest();
-        var payload = inputTeamName + inputTeamCity + inputHeadCoachLname;
-    
-        req.open("POST", "http://httpbin.org/post", true);
-        req.setRequestHeader('Content-Type', 'application/json');
-        req.send(JSON.stringify(payload));
-        req.addEventListener('load', function(){
-            if(req.status >= 200 && req.status < 400){
-                var response = JSON.parse(req.responseText);
-                printPostResults(response);
+// Get the objects we need to modify
+let addTeamForm = document.getElementById('add-team-form');
+
+// Modify the objects we need
+addTeamForm.addEventListener("submit", function (e) {
+
+    // Prevent the form from submitting
+    e.preventDefault();
+
+    // Get form fields we need to get data from
+    let inputTeamName = document.getElementById("input-teamName");
+    let inputCity = document.getElementById("input-city");
+    let inputHeadCoachLname = document.getElementById("input-headCoachLname");
+
+    // Get the values from the form fields
+    let teamNameValue = inputTeamName.value;
+    let cityValue = inputCity.value;
+    let headCoachLnameValue = inputHeadCoachLname.value;
+
+    // Put our data we want to send in a javascript object
+    let data = {
+        teamName: teamNameValue,
+        city: cityValue,
+        headCoachLname: headCoachLnameValue
+    }
+
+    // Setup our AJAX request
+    var xhttp = new XMLHttpRequest();
+    xhttp.open("POST", "/add-team", true);
+    xhttp.setRequestHeader("Content-type", "application/json");
+
+    // Tell our AJAX request how to resolve
+    xhttp.onreadystatechange = () => {
+        if (xhttp.readyState == 4 && xhttp.status == 200) {
+
+            // Add the new data to the table
+            addRowToTable(xhttp.response);
+
+            // Clear the input fields for another transaction
+            inputTeamName.value = '';
+            inputCity.value = '';
+            inputHeadCoachLname.value = '';
         }
-        else
-        {
-            console.log("Please try again.");
+        else if (xhttp.readyState == 4 && xhttp.status != 200) {
+            console.log("There was an error with the input.")
         }
-        });
+    }
 
-        
-        event.preventDefault();
-
-    });
-
-
-
+    // Send the request and wait for the response
+    xhttp.send(JSON.stringify(data));
+})
 
 // Creates a single row from an Object representing a single record from epl_teams
 addRowToTable = (data) => {
