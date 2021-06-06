@@ -256,20 +256,31 @@ app.put('/update-season/:id', function (req, res) {
     });
 });
 
-app.delete('/:id', function (req, res) {
+app.delete('/delete-team/:id', function (req, res) {
     var deleteTeamQuery = "DELETE FROM epl_teams WHERE teamID = ?";
     var inserts = [req.params.teamID];
-    db.pool.query(deleteTeamQuery, inserts, function (error, results, fields) {
+    db.pool.query(deleteTeamQuery, inserts, function (error, result, fields) {
         if (error) {
             console.log(error)
             res.write(JSON.stringify(error));
             res.status(400);
             res.end();
         } else {
-            console.log(results);   //print results for testing
+            console.log(result.affectedRows);   //print results for testing
         }
-    })
-})
+    });
+});
+
+app.use(function (req, res) {
+    res.status(404);
+    res.render('404');
+});
+
+app.use(function (req, res) {
+    res.type('plain/text');
+    res.status(500);
+    res.render('500');
+});
 
 // Listener
 app.listen(PORT, function () {            // This is the basic syntax for what is called the 'listener' which receives incoming requests on the specified PORT.
