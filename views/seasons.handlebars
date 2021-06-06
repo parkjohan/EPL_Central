@@ -39,8 +39,8 @@
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Match Of The Season</th>
-			<th></th>
-		      	<th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -54,8 +54,8 @@
                         <td>{{this.seasonStartDate}}</td>
                         <td>{{this.seasonEndDate}}</td>
                         <td>{{this.matchOfTheSeasonID}}</td>
-			<td><input id="delete-data" type="submit" value="Delete"></td>
-			<td><input id="update-data" type="submit" value="Update"></td>
+                        <td><input id="delete-data" type="submit" value="Delete"></td>
+                        <td><input id="update-data" type="submit" value="Update"></td>
                     </tr>
                     {{/each}}
                 </tbody>
@@ -64,21 +64,21 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <label>
-		<h2>Add a new Season</h2>
-	    </label>
+                <h2>Add a new Season</h2>
+            </label>
             <form id="add-season-form">
                 <label for="input-seasonStartDate">Start Date: </label>
-		<br>
+                <br>
                 <input type="date" name="input-seasonStartDate" id="input-seasonStartDate">
-		<br>
+                <br>
                 <label for="input-seasonEndDate">End Date: </label>
-		<br>
+                <br>
                 <input type="date" name="input-seasonEndDate" id="input-seasonEndDate">
-		<br>
+                <br>
                 <label for="input-matchOfTheSeasonID">Match of the Season ID: </label>
-		<br>
+                <br>
                 <input type="number" name="input-matchOfTheSeasonID" id="input-matchOfTheSeasonID">
-		<br>
+                <br>
                 <input type="submit">
             </form>
         </div>

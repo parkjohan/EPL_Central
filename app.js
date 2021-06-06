@@ -259,7 +259,7 @@ app.put('/update-season/:id', function (req, res) {
 app.delete('/delete-team/:id', function (req, res) {
     var deleteTeamQuery = "DELETE FROM epl_teams WHERE teamID = ?";
     var inserts = [req.params.teamID];
-    db.pool.query(deleteTeamQuery, inserts, function (error, result, fields) {
+    db.pool.query(deleteTeamQuery, 1, function (error, result, fields) {
         if (error) {
             console.log(error)
             res.write(JSON.stringify(error));
