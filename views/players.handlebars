@@ -40,6 +40,8 @@
                         <th>Last name</th>
 			<th>Team ID</th>
                         <th>Nationality</th>
+			<th></th>
+		      	<th></th>
                     </tr>
                 </thead>
 
@@ -54,6 +56,8 @@
                         <td>{{this.playerLname}}</td>
                         <td>{{this.teamID}}</td>
                         <td>{{this.nationality}}</td>
+			<td><input id="delete-data" type="submit" value="Delete"></td>
+			<td><input id="update-data" type="submit" value="Update"></td>
                     </tr>
                     {{/each}}
                 </tbody>
