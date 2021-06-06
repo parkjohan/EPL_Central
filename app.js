@@ -57,6 +57,14 @@ app.get('/teams', function (req, res) {
     });
 });
 
+app.get('/champions', function (req, res) {
+    let championsQuery = "SELECT * FROM season_champion_teams;";
+
+    db.pool.query(championsQuery, function (err, rows, fields) {
+        res.render('champions', { data: rows });
+    });
+});
+
 // POST Routes --- INSERT data into the db
 app.post('/add-team', function (req, res) {
 
