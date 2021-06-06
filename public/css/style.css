@@ -56,12 +56,18 @@
 		color: white;
 	    }
 
-	h2{
-		color: white;
+	.submit-btn{
+		color: #3d195b;
+		background-color: white;
 		}
 
 
 	#myNavbar{
+		background-color: #3d195b;
+		color: white;
+		}
+
+	table input{
 		background-color: #3d195b;
 		color: white;
 		}
