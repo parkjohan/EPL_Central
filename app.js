@@ -259,14 +259,18 @@ app.put('/update-season/:id', function (req, res) {
 app.delete('/delete-team/:id', function (req, res) {
     var deleteTeamQuery = "DELETE FROM epl_teams WHERE teamID = ?";
     var inserts = [req.params.teamID];
-    db.pool.query(deleteTeamQuery, inserts, function (error, result, fields) {
+    db.pool.query(deleteTeamQuery, 1, function (error, result, fields) {
         if (error) {
             console.log(error)
             res.write(JSON.stringify(error));
             res.status(400);
             res.end();
         } else {
-            console.log(result.affectedRows);   //print results for testing
+            let teamsQuery = "SELECT * FROM epl_teams;";
+
+            db.pool.query(teamsQuery, function (err, rows, fields) {
+                res.render('teams', { data: rows });
+            });
         }
     });
 });
