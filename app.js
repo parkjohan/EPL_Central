@@ -25,13 +25,13 @@ app.get('/', function (req, res) {
 });
 
 app.get('/players', function (req, res) {
-    let playerQuery = "SELECT * FROM epl_top_players;";                   
+    let playerQuery = "SELECT * FROM epl_top_players;";
 
     // Execute the query
-    db.pool.query(playerQuery, function (error, rows, fields) {     
-        res.render('players', { data: rows });                  
-    })                                                         
-});    
+    db.pool.query(playerQuery, function (error, rows, fields) {
+        res.render('players', { data: rows });
+    })
+});
 
 app.get('/matches', function (req, res) {
     let matchQuery = "SELECT * FROM epl_matches;";
@@ -91,7 +91,7 @@ app.post('/add-team', function (req, res) {
             }
         })
     })
-})                                                        
+})
 
 app.post('/add-player', function (req, res) {
 
@@ -157,6 +157,7 @@ app.post('/add-match', function (req, res) {
             }
             // If all went well, send the results of the query back and display the table
             else {
+                console.log(rows);  // print the table
                 res.send(rows);
             }
         })
@@ -198,12 +199,69 @@ app.post('/add-season', function (req, res) {
 })
 
 // UPDATE Routes
-app.post('/update-player/:id', function (req, res) {
-    let updatePlayerQuery = "UPDATE epl_top_players SET playerFname=?, playerLname=?, teamID=?, nationality=?, WHERE id=?";
-    db.pool.query(updatePlayerQuery, function (err, result) {
+app.put('/update-player/:id', function (req, res) {
+    var data = req.body;
+    var updatePlayerQuery = "UPDATE epl_top_players SET playerFname=?, playerLname=?, teamID=?, nationality=? WHERE id=?";
+    var inserts = [data.playerFname, data.playerLname, data.teamID, data.nationality];
+    db.pool.query(updatePlayerQuery, inserts, function (err, result) {
         if (err) throw err;
+        else {
+            res.send(result);
+        }
     });
 });
+
+app.put('/update-match/:id', function (req, res) {
+    var data = req.body;
+    var updateMatchQuery = "UPDATE epl_matches SET matchDate=?, teamHome=?, teamHomeScore=?, teamAway=?, teamAwayScore=?, teamWon=? WHERE id=?";
+    var inserts = [data.matchDate, data.teamHome, data.teamHomeScore, data.teamAway, data.teamAwayScore, data.teamWon];
+    db.pool.query(updateMatchQuery, inserts, function (err, result) {
+        if (err) throw err;
+        else {
+            res.send(result);
+        }
+    });
+});
+
+app.put('/update-team/:id', function (req, res) {
+    var data = req.body;
+    var update = "UPDATE epl_teams SET teamName=?, city=?, headCoachLname=? WHERE id=?";
+    var inserts = [data.teamName, data.city, data.headCoachLname];
+    db.pool.query(updateSeasonQuery, inserts, function (err, result) {
+        if (err) throw err;
+        else {
+            res.send(result);
+        }
+    });
+});
+
+app.put('/update-season/:id', function (req, res) {
+    var data = req.body;
+    var updateSeasonQuery = "UPDATE epl_seasons SET seasonStartDate=?, seasonEndDate=?, matchOfTheSeasonID=? WHERE id=?";
+    var inserts = [data.seasonStartDate, data.seasonEndDate, data.matchOfTheSeasonID];
+    db.pool.query(updateSeasonQuery, inserts, function (err, result) {
+        if (err) throw err;
+        else {
+            console.log(result);
+            res.send(result);
+        }
+    });
+});
+
+app.delete('/:id', function (req, res) {
+    var deleteTeamQuery = "DELETE FROM epl_teams WHERE teamID = ?";
+    var inserts = [req.params.teamID];
+    db.pool.query(deleteTeamQuery, inserts, function (error, results, fields) {
+        if (error) {
+            console.log(error)
+            res.write(JSON.stringify(error));
+            res.status(400);
+            res.end();
+        } else {
+            console.log(results);   //print results for testing
+        }
+    })
+})
 
 // Listener
 app.listen(PORT, function () {            // This is the basic syntax for what is called the 'listener' which receives incoming requests on the specified PORT.
