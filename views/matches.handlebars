@@ -22,7 +22,7 @@
 
 <div class="container-fluid text-center">
     <div class="row content">
-        <div class="col-sm-2 sidenav">
+<div class="col-sm-2 sidenav">
 
         </div>
         <div class="col-sm-8 text-left">
@@ -42,8 +42,8 @@
                         <th>Away Team</th>
                         <th>Away Team Score</th>
                         <th>Winning Team</th>
-                        <th></th>
-                        <th></th>
+			<th></th>
+		      	<th></th>
                     </tr>
                 </thead>
 
@@ -59,13 +59,8 @@
                         <td>{{this.teamAway}}</td>
                         <td>{{this.teamAwayScore}}</td>
                         <td>{{this.teamWon}}</td>
-<<<<<<< HEAD
 			<td class="input-td"><input id="delete-data" type="submit" value="Delete"></td>
 			<td class="input-td"><input id="update-data" type="submit" value="Update"></td>
-=======
-                        <td><input id="delete-data" type="submit" value="Delete"></td>
-                        <td><input id="update-data" type="submit" value="Update"></td>
->>>>>>> 0c51afed1ce521742060347062e993135bdd99eb
                     </tr>
                     {{/each}}
                 </tbody>
@@ -74,33 +69,33 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <label>
-                <h2>Add a new Match</h2>
-            </label>
+		<h2>Add a new Match</h2>
+	    </label>
             <form id="add-match-form">
                 <label for="input-matchDate">Match Date: </label>
-                <br>
+		<br>
                 <input type="date" name="input-matchDate" id="input-matchDate">
-                <br>
+		<br>
                 <label for="input-teamHome">Home Team: </label>
-                <br>
+		<br>
                 <input type="text" name="input-teamHome" id="input-teamHome">
-                <br>
+		<br>
                 <label for="input-teamHomeScore">Team Home Score: </label>
-                <br>
+		<br>
                 <input type="number" name="input-teamHomeScore" id="input-teamHomeScore">
-                <br>
+		<br>
                 <label for="input-teamAway">Away Team: </label>
-                <br>
+		<br>
                 <input type="text" name="input-teamAway" id="input-teamAway">
-                <br>
+		<br>
                 <label for="input-teamAwayScore">Team Away Score: </label>
-                <br>
+		<br>
                 <input type="number" name="input-teamAwayScore" id="input-teamAwayScore">
-                <br>
+		<br>
                 <label for="input-teamWon">Team Won: </label>
-                <br>
+		<br>
                 <input type="text" name="input-teamWon" id="input-teamWon">
-                <br>
+		<br>
 
                 <input type="submit">
             </form>
