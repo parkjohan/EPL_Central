@@ -266,7 +266,11 @@ app.delete('/delete-team/:id', function (req, res) {
             res.status(400);
             res.end();
         } else {
-            console.log(result.affectedRows);   //print results for testing
+            let teamsQuery = "SELECT * FROM epl_teams;";
+
+            db.pool.query(teamsQuery, function (err, rows, fields) {
+                res.render('teams', { data: rows });
+            });
         }
     });
 });
