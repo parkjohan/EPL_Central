@@ -12,8 +12,6 @@
         /* Set gray background color and 100% height */
         .sidenav {
             padding-top: 20px;
-            
-	       color: white;
             background-color: #3d195b;
             height: 100%;
         }
@@ -54,9 +52,13 @@
 		background-color: white transparent;
 	    }
 
-	form{
+	label{
 		color: white;
 	    }
+
+	h2{
+		color: white;
+		}
 
 
 	#myNavbar{
