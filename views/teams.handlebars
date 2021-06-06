@@ -1,4 +1,4 @@
-<nav class="navbar navbar-inverse id="outerNav">
+<nav class="navbar navbar-inverse id=" outerNav">
     <div class="container-fluid">
         <div class="navbar-header">
             <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#myNavbar">
@@ -35,12 +35,12 @@
                     {{!-- For just the first row, we print each key of the row object as a header cell so we
                     know what each column means when the page renders --}}
                     <tr>
-                      <th>ID</th>
-		      <th>Team Name</th>
-                      <th>City</th>
-                      <th>Head Coach</th>
-		      <th></th>
-		      <th></th>
+                        <th>ID</th>
+                        <th>Team Name</th>
+                        <th>City</th>
+                        <th>Head Coach</th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -50,12 +50,17 @@
                     {{!-- For each row --}}
                     {{#each data}}
                     <tr>
-			<td>{{this.id}}</td>
+                        <td>{{this.id}}</td>
                         <td>{{this.teamName}}</td>
                         <td>{{this.city}}</td>
                         <td>{{this.headCoachLname}}</td>
+<<<<<<< HEAD
 			<td class="input-td"><input id="delete-data" type="submit" value="Delete"></td>
 			<td class="input-td"><input id="update-data" type="submit" value="Update"></td>
+=======
+                        <td><input id="delete-data" type="submit" value="Delete"></td>
+                        <td><input id="update-data" type="submit" value="Update"></td>
+>>>>>>> 0c51afed1ce521742060347062e993135bdd99eb
                     </tr>
                     {{/each}}
                 </tbody>
@@ -64,24 +69,25 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <label>
-		<h2>Add a new EPL team</h2>
-	    </label>
+                <h2>Add a new EPL team</h2>
+            </label>
             <form id="add-team-form">
                 <label for="input-teamName">Team Name: </label>
-		<br>
+                <br>
                 <input type="text" name="input-teamName" id="input-teamName">
-		<br>
+                <br>
                 <label for="input-city">City: </label>
-		<br>
+                <br>
                 <input type="text" name="input-city" id="input-city">
-		<br>
+                <br>
                 <label for="input-headCoachLname">Head Coach Last Name: </label>
-		<br>
+                <br>
                 <input type="text" name="input-headCoachLname" id="input-headCoachLname">
-		<br>
+                <br>
                 <input type="submit" class="submit-btn">
             </form>
         </div>
     </div>
 </div>
 <script src="./scripts/add_team.js"></script>
+<script src="./scripts/delete_team.js"></script>
