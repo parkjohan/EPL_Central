@@ -38,8 +38,8 @@
                         <th>ID</th>
                         <th>Season ID</th>
                         <th>Team ID</th>
-			<th></th>
-		      	<th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -54,8 +54,13 @@
                         <td>{{this.lname}}</td>
                         <td>{{this.homeworld}}</td>
                         <td>{{this.age}}</td>
+<<<<<<< HEAD
 			<td class="input-td"><input id="delete-data" type="submit" value="Delete"></td>
 			<td class="input-td"><input id="update-data" type="submit" value="Update"></td>
+=======
+                        <td><input id="delete-data" type="submit" value="Delete"></td>
+                        <td><input id="update-data" type="submit" value="Update"></td>
+>>>>>>> 0c51afed1ce521742060347062e993135bdd99eb
                     </tr>
                     {{/each}}
                 </tbody>
@@ -64,25 +69,25 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <label>
-		<h2>Adding a New Champion</h2>
-	    </label>
+                <h2>Adding a New Champion</h2>
+            </label>
             <form id="add-person-form-ajax">
                 <label for="input-fname">First Name: </label>
-		<br>
+                <br>
                 <input type="text" name="input-fname" id="input-fname">
-		<br>
+                <br>
                 <label for="input-lname">Last Name: </label>
-		<br>
+                <br>
                 <input type="text" name="input-lname" id="input-lname">
-		<br>
+                <br>
                 <label for="input-homeworld">Homeworld: </label>
-		<br>
+                <br>
                 <input type="number" name="input-homeworld" id="input-homeworld">
-		<br>
+                <br>
                 <label for="input-age">Age: </label>
-		<br>
+                <br>
                 <input type="number" name="input-age" id="input-age">
-		<br>
+                <br>
                 <input type="submit">
             </form>
         </div>
