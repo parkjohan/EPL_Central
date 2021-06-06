@@ -39,6 +39,8 @@
                         <th>Start Date</th>
                         <th>End Date</th>
                         <th>Match Of The Season</th>
+			<th></th>
+		      	<th></th>
                     </tr>
                 </thead>
 
@@ -52,6 +54,8 @@
                         <td>{{this.seasonStartDate}}</td>
                         <td>{{this.seasonEndDate}}</td>
                         <td>{{this.matchOfTheSeasonID}}</td>
+			<td><input id="delete-data" type="submit" value="Delete"></td>
+			<td><input id="update-data" type="submit" value="Update"></td>
                     </tr>
                     {{/each}}
                 </tbody>
