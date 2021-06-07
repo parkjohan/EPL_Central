@@ -51,7 +51,7 @@
                     {{!-- For each row --}}
                     {{#each data}}
                     <tr id="player-info-tablerow">
-                        <td>{{this.id}}</td>
+                        <td>{{this.playerID}}</td>
                         <td>{{this.playerFname}}</td>
                         <td>{{this.playerLname}}</td>
                         <td>{{this.teamID}}</td>
@@ -82,7 +82,7 @@
                                                 <br>
                                                 <input type="text" name="input-playerLnameUpdated" id="input-playerLnameUpdated">
                                                 <br>
-                                                <label for="teamID-dropdown">Team ID:</label>
+                                                <label for="teamID-dropdownUpdated">Team ID:</label>
                                                 <select class="form-control" id="teamID-dropdownUpdated">
                                                     {{#each ids}}
                                                     <option>{{this.teamID}}</option>
