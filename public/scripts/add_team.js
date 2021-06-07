@@ -71,7 +71,7 @@ addRowToTable = (data) => {
     let headCoachLnameCell = document.createElement("TD");
 
     // Fill the cells with correct data
-    idCell.innerText = newRow.id;
+    idCell.innerText = newRow.teamID;
     teamNameCell.innerText = newRow.teamName;
     teamCityCell.innerText = newRow.city;
     headCoachLnameCell.innerText = newRow.headCoachLname;
