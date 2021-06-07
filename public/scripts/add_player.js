@@ -109,7 +109,7 @@ addRowToTable = (data) => {
     let nationalityCell = document.createElement("TD");
 
     // Fill the cells with correct data
-    idCell.innerText = newRow.id;
+    idCell.innerText = newRow.playerID;
     fNameCell.innerText = newRow.playerFname;
     lNameCell.innerText = newRow.playerLname;
     teamIDCell.innerText = newRow.teamID;
