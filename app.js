@@ -27,12 +27,13 @@ app.get('/', function (req, res) {
 app.get('/players', function (req, res) {
     let playerQuery = "SELECT * FROM epl_top_players;";
 
-    let teamIDs = [];
-    let getTeamIDsQuery = 'SELECT teamID FROM epl_teams;';
+    var teamIDs = [];
+    let getTeamIDsQuery = 'SELECT teamID FROM epl_teams ORDER BY teamID ASC;';
     db.pool.query(getTeamIDsQuery, function (err, rows, fields) {
-        for (let i = 0; i < rows.length; i++) {
+        for (var i = 0; i < rows.length; i++) {
             teamIDs.push(rows[i]);
         }
+        console.log(teamIDs);
     });
 
     // Execute the query
