@@ -22,7 +22,7 @@
 
 <div class="container-fluid text-center">
     <div class="row content">
-<div class="col-sm-2 sidenav">
+        <div class="col-sm-2 sidenav">
 
         </div>
         <div class="col-sm-8 text-left">
@@ -38,10 +38,10 @@
                         <th>ID</th>
                         <th>First Name</th>
                         <th>Last name</th>
-			<th>Team ID</th>
+                        <th>Team ID</th>
                         <th>Nationality</th>
-			<th></th>
-		      	<th></th>
+                        <th></th>
+                        <th></th>
                     </tr>
                 </thead>
 
@@ -66,25 +66,28 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <label>
-		<h2>Add a new Top Player</h2>
+                <h2>Add a new Top Player</h2>
             </label>
             <form id="add-player-form">
                 <label for="input-playerFname">First Name: </label>
-		<br>
+                <br>
                 <input type="text" name="input-playerFname" id="input-playerFname">
-		<br>
+                <br>
                 <label for="input-playerLname">Last Name: </label>
-		<br>
+                <br>
                 <input type="text" name="input-playerLname" id="input-playerLname">
-		<br>
-                <label for="input-teamID">Team ID: </label>
-		<br>
-                <input type="number" name="input-teamID" id="input-teamID">
-		<br>
+                <br>
+                <label for="input-teamID">Team ID:</label>
+                <select class="form-control" id="teamID-dropdown">
+                    {{#each ids}}
+                    <option>{{this}}</option>
+                    {{/each}}
+                </select>
+                <br>
                 <label for="input-nationality">Nationality: </label>
-		<br>
+                <br>
                 <input type="text" name="input-nationality" id="input-nationality">
-		<br>
+                <br>
 
                 <input type="submit">
             </form>

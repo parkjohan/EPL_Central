@@ -27,9 +27,17 @@ app.get('/', function (req, res) {
 app.get('/players', function (req, res) {
     let playerQuery = "SELECT * FROM epl_top_players;";
 
+    let teamIDs = [];
+    let getTeamIDsQuery = 'SELECT teamID FROM epl_teams;';
+    db.pool.query(getTeamIDsQuery, function (err, rows, fields) {
+        for (let i = 0; i < rows.length; i++) {
+            teamIDs.push(rows[i]);
+        }
+    });
+
     // Execute the query
     db.pool.query(playerQuery, function (error, rows, fields) {
-        res.render('players', { data: rows });
+        res.render('players', { data: rows, ids: teamIDs });
     })
 });
 
