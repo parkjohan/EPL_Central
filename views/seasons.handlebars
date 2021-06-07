@@ -77,14 +77,15 @@
                                                 <br>
                                                 <label for="input-seasonEndDateUpdated">End Date: </label>
                                                 <br>
-                                                <input type="date" name="input-seasonEndDateUpdated" id="input-seasonEndDateUpdated">
+                                                <input type="date" name="input-seasonEndDateUpdated"
+                                                    id="input-seasonEndDateUpdated">
                                                 <br>
                                                 <label for="matchID-dropdownUpdated">Match Of The Season ID:</label>
-                					<select class="form-control" id="matchID-dropdownUpdated">
-                    					{{#each ids}}
-                    						<option>{{this.matchID}}</option>
-                    					{{/each}}
-                					</select>
+                                                <select class="form-control" id="matchID-dropdownUpdated">
+                                                    {{#each ids}}
+                                                    <option>{{this.matchID}}</option>
+                                                    {{/each}}
+                                                </select>
                                                 <br>
 
                                             </form>
@@ -92,13 +93,11 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Update</button>
+                                            <button type="button" class="btn btn-primary" id="update-season-btn">Update</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
                         </td>
                     </tr>
                     {{/each}}
@@ -122,7 +121,7 @@
                 <label for="matchID-dropdown">Match Of The Season ID:</label>
                 <select class="form-control" id="matchID-dropdown">
                     {{#each ids}}
-                    	<option>{{this.matchID}}</option>
+                    <option>{{this.matchID}}</option>
                     {{/each}}
                 </select>
                 <br>
@@ -132,3 +131,4 @@
     </div>
 </div>
 <script src="./scripts/add_season.js"></script>
+<script src="./scripts/update_season.js"></script>
