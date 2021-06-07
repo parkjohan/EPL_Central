@@ -37,7 +37,6 @@ CREATE TABLE `epl_teams` (
     `teamName` varchar(255) NOT NULL UNIQUE,
     `city` varchar(255) NOT NULL,
     `headCoachLname` varchar(255) NOT NULL,
-    `playerID` int(11) NOT NULL,
     PRIMARY KEY (`teamID`)
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
