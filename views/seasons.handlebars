@@ -50,7 +50,7 @@
                     {{!-- For each row --}}
                     {{#each data}}
                     <tr>
-                        <td>{{this.id}}</td>
+                        <td>{{this.seasonID}}</td>
                         <td>{{this.seasonStartDate}}</td>
                         <td>{{this.seasonEndDate}}</td>
                         <td>{{this.matchOfTheSeasonID}}</td>
@@ -79,10 +79,12 @@
                                                 <br>
                                                 <input type="date" name="input-seasonEndDateUpdated" id="input-seasonEndDateUpdated">
                                                 <br>
-                                                <label for="input-matchOfTheSeasonIDUpdated">Match of the Season ID: </label>
-                                                <br>
-                                                <input type="number" name="input-matchOfTheSeasonIDUpdated"
-                                                    id="input-matchOfTheSeasonIDUpdated">
+                                                <label for="matchID-dropdownUpdated">Match Of The Season ID:</label>
+                					<select class="form-control" id="matchID-dropdownUpdated">
+                    					{{#each ids}}
+                    						<option>{{this.matchID}}</option>
+                    					{{/each}}
+                					</select>
                                                 <br>
 
                                             </form>
@@ -117,9 +119,12 @@
                 <br>
                 <input type="date" name="input-seasonEndDate" id="input-seasonEndDate">
                 <br>
-                <label for="input-matchOfTheSeasonID">Match of the Season ID: </label>
-                <br>
-                <input type="number" name="input-matchOfTheSeasonID" id="input-matchOfTheSeasonID">
+                <label for="matchID-dropdown">Match Of The Season ID:</label>
+                <select class="form-control" id="matchID-dropdown">
+                    {{#each ids}}
+                    	<option>{{this.matchID}}</option>
+                    {{/each}}
+                </select>
                 <br>
                 <input type="submit">
             </form>
