@@ -259,8 +259,8 @@ app.post('/add-champion', function (req, res) {
 // UPDATE Routes
 app.put('/update-player/:id', function (req, res) {
     var data = req.body;
-    var updatePlayerQuery = "UPDATE epl_top_players SET playerFname=?, playerLname=?, teamID=?, nationality=? WHERE id=?";
-    var inserts = [data.playerFname, data.playerLname, data.teamID, data.nationality];
+    var updatePlayerQuery = "UPDATE epl_top_players SET playerFname=?, playerLname=?, teamID=?, nationality=? WHERE playerID=?";
+    var inserts = [data.playerFname, data.playerLname, data.teamID, data.nationality, data.playerID];
     db.pool.query(updatePlayerQuery, inserts, function (err, result) {
         if (err) throw err;
         else {
@@ -271,7 +271,7 @@ app.put('/update-player/:id', function (req, res) {
 
 app.put('/update-match/:id', function (req, res) {
     var data = req.body;
-    var updateMatchQuery = "UPDATE epl_matches SET matchDate=?, teamHome=?, teamHomeScore=?, teamAway=?, teamAwayScore=?, teamWon=? WHERE id=?";
+    var updateMatchQuery = "UPDATE epl_matches SET matchDate=?, teamHome=?, teamHomeScore=?, teamAway=?, teamAwayScore=?, teamWon=? WHERE matchID=?";
     var inserts = [data.matchDate, data.teamHome, data.teamHomeScore, data.teamAway, data.teamAwayScore, data.teamWon];
     db.pool.query(updateMatchQuery, inserts, function (err, result) {
         if (err) throw err;
