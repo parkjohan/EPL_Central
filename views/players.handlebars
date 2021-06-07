@@ -50,7 +50,7 @@
 
                     {{!-- For each row --}}
                     {{#each data}}
-                    <tr>
+                    <tr id="player-info-tablerow">
                         <td>{{this.id}}</td>
                         <td>{{this.playerFname}}</td>
                         <td>{{this.playerLname}}</td>
@@ -60,7 +60,7 @@
                             <input id="delete-data" type="submit" value="Delete">
                         </td>
                         <td class="input-td">
-                            <input id="update-data" type="submit" value="Update" data-toggle="modal"
+                            <input class="update-data-class" id="update-data" type="submit" value="Update" data-toggle="modal"
                                 data-target="#update-modal">
                             <div class="modal fade" id="update-modal" tabindex="-1" role="dialog"
                                 aria-labelledby="update-modal" aria-hidden="true">
@@ -76,14 +76,14 @@
                                             <form id="add-player-form">
                                                 <label for="input-playerFname">First Name: </label>
                                                 <br>
-                                                <input type="text" name="input-playerFname" id="input-playerFname">
+                                                <input type="text" name="input-playerFname" id="input-playerFnameUpdated">
                                                 <br>
                                                 <label for="input-playerLname">Last Name: </label>
                                                 <br>
-                                                <input type="text" name="input-playerLname" id="input-playerLname">
+                                                <input type="text" name="input-playerLname" id="input-playerLnameUpdated">
                                                 <br>
-                                                <label for="input-teamID">Team ID:</label>
-                                                <select class="form-control" id="teamID-dropdown">
+                                                <label for="teamID-dropdown">Team ID:</label>
+                                                <select class="form-control" id="teamID-dropdownUpdated">
                                                     {{#each ids}}
                                                     <option>{{this.teamID}}</option>
                                                     {{/each}}
@@ -91,14 +91,14 @@
                                                 <br>
                                                 <label for="input-nationality">Nationality: </label>
                                                 <br>
-                                                <input type="text" name="input-nationality" id="input-nationality">
+                                                <input type="text" name="input-nationality" id="input-nationalityUpdated">
                                                 <br>
                                             </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Update</button>
+                                            <button type="button" class="btn btn-primary" id="update-player-info-btn" data-dismiss="modal">Update</button>
                                         </div>
                                     </div>
                                 </div>
@@ -123,7 +123,7 @@
                 <br>
                 <input type="text" name="input-playerLname" id="input-playerLname">
                 <br>
-                <label for="input-teamID">Team ID:</label>
+                <label for="teamID-dropdown">Team ID:</label>
                 <select class="form-control" id="teamID-dropdown">
                     {{#each ids}}
                     <option>{{this.teamID}}</option>
