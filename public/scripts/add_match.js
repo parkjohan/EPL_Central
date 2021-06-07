@@ -87,7 +87,7 @@ addRowToTable = (data) => {
     let teamWonCell = document.createElement("TD");
 
     // Fill the cells with correct data
-    idCell.innerText = newRow.id;
+    idCell.innerText = newRow.matchID;
     matchDateCell.innerText = newRow.matchDate;
     teamHomeCell.innerText = newRow.teamHome;
     teamHomeScoreCell.innerText = newRow.teamHomeScore;
