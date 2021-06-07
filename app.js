@@ -206,6 +206,40 @@ app.post('/add-season', function (req, res) {
     })
 })
 
+app.post('/add-champion', function (req, res) {
+    // Get the form data from request body
+    let data = req.body;
+
+    // Create the query and run it on the database
+    let addSeasonQuery = `INSERT INTO season_champion_teams (seasonID, teamID) VALUES ('${data.seasonID}', '${data.teamID}')`;
+    db.pool.query(addSeasonQuery, function (error, rows, fields) {
+
+        // Check to see if there was an error
+        if (error) {
+
+            // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
+            console.log(error)
+            res.sendStatus(400);
+        }
+        // If there was no error, perform a SELECT * on bsg_people
+        let query2 = "SELECT * FROM season_champion_teams;";
+        db.pool.query(query2, function (error, rows, fields) {
+
+            // If there was an error on the second query, send a 400
+            if (error) {
+
+                // Log the error to the terminal so we know what went wrong, and send the visitor an HTTP response 400 indicating it was a bad request.
+                console.log(error);
+                res.sendStatus(400);
+            }
+            // If all went well, send the results of the query back and display the table
+            else {
+                res.send(rows);
+            }
+        })
+    })
+})
+
 // UPDATE Routes
 app.put('/update-player/:id', function (req, res) {
     var data = req.body;

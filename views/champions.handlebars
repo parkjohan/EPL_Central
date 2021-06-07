@@ -62,24 +62,16 @@
         <div class="col-sm-2 sidenav">
             {{!-- Form to add a record to the table --}}
             <label>
-		<h2>Adding a New Champion</h2>
+		<h2>Add a New Champion</h2>
 	    </label>
-            <form id="add-person-form-ajax">
-                <label for="input-fname">First Name: </label>
+            <form id="add-champion-form">
+                <label for="input-seasonID">Season ID: </label>
 		<br>
-                <input type="text" name="input-fname" id="input-fname">
+                <input type="number" name="input-seasonID" id="input-seasonID">
 		<br>
-                <label for="input-lname">Last Name: </label>
+                <label for="input-teamID">Team ID: </label>
 		<br>
-                <input type="text" name="input-lname" id="input-lname">
-		<br>
-                <label for="input-homeworld">Homeworld: </label>
-		<br>
-                <input type="number" name="input-homeworld" id="input-homeworld">
-		<br>
-                <label for="input-age">Age: </label>
-		<br>
-                <input type="number" name="input-age" id="input-age">
+                <input type="number" name="input-teamID" id="input-teamID">
 		<br>
                 <input type="submit">
             </form>
