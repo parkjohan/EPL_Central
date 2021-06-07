@@ -27,9 +27,18 @@ app.get('/', function (req, res) {
 app.get('/players', function (req, res) {
     let playerQuery = "SELECT * FROM epl_top_players;";
 
+    var teamIDs = [];
+    let getTeamIDsQuery = 'SELECT teamID FROM epl_teams ORDER BY teamID ASC;';
+    db.pool.query(getTeamIDsQuery, function (err, rows, fields) {
+        for (var i = 0; i < rows.length; i++) {
+            teamIDs.push(rows[i]);
+        }
+        console.log(teamIDs);
+    });
+
     // Execute the query
     db.pool.query(playerQuery, function (error, rows, fields) {
-        res.render('players', { data: rows });
+        res.render('players', { data: rows, ids: teamIDs });
     })
 });
 

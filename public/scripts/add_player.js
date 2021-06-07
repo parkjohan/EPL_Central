@@ -13,6 +13,9 @@ addPlayerForm.addEventListener("submit", function (e) {
     let inputTeamID = document.getElementById("input-teamID");
     let inputNationality = document.getElementById("input-nationality");
 
+    // Query to get teamID values to populate dropdown
+
+
     // Get the values from the form fields
     let playerFnameValue = inputPlayerFname.value;
     let playerLnameValue = inputPlayerLname.value;
