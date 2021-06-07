@@ -52,8 +52,16 @@ app.get('/matches', function (req, res) {
 app.get('/seasons', function (req, res) {
     let seasonQuery = "SELECT * FROM epl_seasons;";
 
+    var matchIDs = [];
+    let getMatchIDsQuery = 'SELECT matchID FROM epl_matches ORDER BY matchID ASC;';
+    db.pool.query(getMatchIDsQuery, function (err, rows, fields) {
+        for (var i = 0; i < rows.length; i++) {
+            matchIDs.push(rows[i]);
+        }
+    });
+
     db.pool.query(seasonQuery, function (err, rows, fields) {
-        res.render('seasons', { data: rows });
+        res.render('seasons', { data: rows, ids: matchIDs });
     })
 });
 
@@ -125,7 +133,7 @@ app.post('/add-player', function (req, res) {
             console.log(error)
             res.sendStatus(400);
         }
-        // If there was no error, perform a SELECT * on bsg_people
+        // If there was no error, perform a SELECT * on epl_top_players
         let query2 = "SELECT * FROM epl_top_players;";
         db.pool.query(query2, function (error, rows, fields) {
 
