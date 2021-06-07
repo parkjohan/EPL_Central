@@ -33,7 +33,6 @@ app.get('/players', function (req, res) {
         for (var i = 0; i < rows.length; i++) {
             teamIDs.push(rows[i]);
         }
-        console.log(teamIDs);
     });
 
     // Execute the query
