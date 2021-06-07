@@ -13,7 +13,6 @@ deleteTeamBtn.addEventListener("click", function(e) {
     req.addEventListener('load', function () {
         if (req.status >= 200 && req.status < 400) {
             console.log("Deleting...");
-            console.log(JSON.parse(req.responseText));
         }
     });
     req.send(payload);
