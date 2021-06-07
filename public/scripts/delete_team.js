@@ -1,7 +1,7 @@
 let deleteTeamBtn = document.getElementById('delete-data');
 
 
-deleteTeamBtn.addEventListener("click",function(e) {
+deleteTeamBtn.addEventListener("click", function(e) {
 
     console.log("button clicked!");
     var req = new XMLHttpRequest();
@@ -17,4 +17,4 @@ deleteTeamBtn.addEventListener("click",function(e) {
         }
     });
     req.send(payload);
-}
+});
