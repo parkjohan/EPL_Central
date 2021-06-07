@@ -84,3 +84,22 @@
     #teamID-dropdown{
         font-weight: bold;
     }
+
+	.modal-body{
+		
+		background-color: #3d195b;
+		}
+
+	.modal-body  input{
+		background-color: white;
+		color: #3d195b;
+		}
+
+	#update-label{
+		color: #3d195b;
+		font-size: x-large;
+		}
+
+	.modal-footer .btn-primary{
+		background-color: #3d195b;
+		}
