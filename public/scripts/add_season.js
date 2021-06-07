@@ -10,7 +10,7 @@ addSeasonForm.addEventListener("submit", function (e) {
     // Get form fields we need to get data from
     let inputSeasonStartDate = document.getElementById("input-seasonStartDate");
     let inputSeasonEndDate = document.getElementById("input-seasonEndDate");
-    let inputMatchOfTheSeasonID = document.getElementById("input-matchOfTheSeasonID")
+    let inputMatchOfTheSeasonID = document.getElementById("matchID-dropdown");
 
     // Get the values from the form fields
     let seasonStartDateValue = inputSeasonStartDate.value;
@@ -71,7 +71,7 @@ addRowToTable = (data) => {
     let matchOfSeasonIDCell = document.createElement("TD");
 
     // Fill the cells with correct data
-    idCell.innerText = newRow.id;
+    idCell.innerText = newRow.seasonID;
     startDateCell.innerText = newRow.seasonStartDate;
     endDateCell.innerText = newRow.seasonEndDate;
     matchOfSeasonIDCell.innerText = newRow.matchOfTheSeasonID;
