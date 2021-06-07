@@ -1,4 +1,9 @@
-function deleteTeam() {
+let deleteTeamBtn = document.getElementById('delete-data');
+
+
+deleteTeamBtn.addEventListener("click",function(e) {
+
+    console.log("button clicked!");
     var req = new XMLHttpRequest();
     var teamID = this.value;
     var payload = {
