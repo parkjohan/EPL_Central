@@ -10,7 +10,7 @@ addPlayerForm.addEventListener("submit", function (e) {
     // Get form fields we need to get data from
     let inputPlayerFname = document.getElementById("input-playerFname");
     let inputPlayerLname = document.getElementById("input-playerLname");
-    let inputTeamID = document.getElementById("input-teamID");
+    let inputTeamID = document.getElementById("teamID-dropdown");
     let inputNationality = document.getElementById("input-nationality");
 
     // Query to get teamID values to populate dropdown
