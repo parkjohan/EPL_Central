@@ -50,7 +50,7 @@
                     {{!-- For each row --}}
                     {{#each data}}
                     <tr>
-                        <td>{{this.teamID}}</td>
+                        <td id="team-ID">{{this.teamID}}</td>
                         <td>{{this.teamName}}</td>
                         <td>{{this.city}}</td>
                         <td>{{this.headCoachLname}}</td>
@@ -88,14 +88,11 @@
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
                                                 data-dismiss="modal">Close</button>
-                                            <button type="button" class="btn btn-primary">Update</button>
+                                            <button type="button" class="btn btn-primary" id="update-team-btn" data-dismiss="modal">Update</button>
                                         </div>
                                     </div>
                                 </div>
                             </div>
-
-
-
                         </td>
                     </tr>
                     {{/each}}
@@ -126,4 +123,5 @@
     </div>
 </div>
 <script src="./scripts/add_team.js"></script>
+<script src="./scripts/update_team.js"></script>
 <script src="./scripts/delete_team.js"></script>
