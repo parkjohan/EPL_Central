@@ -56,7 +56,7 @@
                         <td>{{this.headCoachLname}}</td>
                         <td class="input-td"><input id="delete-data" type="submit" value="Delete"></td>
                         <td class="input-td">
-				<input id="update-data" type="submit" value="Update" data-toggle="modal"
+                            <input id="update-data" type="submit" value="Update" data-toggle="modal"
                                 data-target="#update-modal">
                             <div class="modal fade" id="update-modal" tabindex="-1" role="dialog"
                                 aria-labelledby="update-modal" aria-hidden="true">
@@ -69,20 +69,21 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form id="add-team-form">
-                				<label for="input-teamName">Team Name: </label>
-                				<br>
-                				<input type="text" name="input-teamName" id="input-teamName">
-                				<br>
-                				<label for="input-city">City: </label>
-                				<br>
-               					<input type="text" name="input-city" id="input-city">
-                				<br>
-                				<label for="input-headCoachLname">Head Coach Last Name: </label>
-                				<br>
-                				<input type="text" name="input-headCoachLname" id="input-headCoachLname">
-                				<br>
-            				    </form>
+                                            <form id="update-team-form">
+                                                <label for="input-teamNameUpdated">Team Name: </label>
+                                                <br>
+                                                <input type="text" name="input-teamNameUpdated" id="input-teamNameUpdated">
+                                                <br>
+                                                <label for="input-cityUpdated">City: </label>
+                                                <br>
+                                                <input type="text" name="input-cityUpdated" id="input-cityUpdated">
+                                                <br>
+                                                <label for="input-headCoachLnameUpdated">Head Coach Last Name: </label>
+                                                <br>
+                                                <input type="text" name="input-headCoachLnameUpdated"
+                                                    id="input-headCoachLnameUpdated">
+                                                <br>
+                                            </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
@@ -95,7 +96,7 @@
 
 
 
-			</td>
+                        </td>
                     </tr>
                     {{/each}}
                 </tbody>

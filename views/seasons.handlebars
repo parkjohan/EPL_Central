@@ -56,7 +56,7 @@
                         <td>{{this.matchOfTheSeasonID}}</td>
                         <td class="input-td"><input id="delete-data" type="submit" value="Delete"></td>
                         <td class="input-td">
-				<input id="update-data" type="submit" value="Update" data-toggle="modal"
+                            <input id="update-data" type="submit" value="Update" data-toggle="modal"
                                 data-target="#update-modal">
                             <div class="modal fade" id="update-modal" tabindex="-1" role="dialog"
                                 aria-labelledby="update-modal" aria-hidden="true">
@@ -69,21 +69,23 @@
                                             </button>
                                         </div>
                                         <div class="modal-body">
-                                            <form id="add-season-form">
-                				<label for="input-seasonStartDate">Start Date: </label>
-                				<br>
-                				<input type="date" name="input-seasonStartDate" id="input-seasonStartDate">
-                				<br>
-                				<label for="input-seasonEndDate">End Date: </label>
-                				<br>
-                				<input type="date" name="input-seasonEndDate" id="input-seasonEndDate">
-                				<br>
-                				<label for="input-matchOfTheSeasonID">Match of the Season ID: </label>
-                				<br>
-                				<input type="number" name="input-matchOfTheSeasonID" id="input-matchOfTheSeasonID">
-                				<br>
-                
-            				</form>
+                                            <form id="update-season-form">
+                                                <label for="input-seasonStartDateUpdated">Start Date: </label>
+                                                <br>
+                                                <input type="date" name="input-seasonStartDateUpdated"
+                                                    id="input-seasonStartDateUpdated">
+                                                <br>
+                                                <label for="input-seasonEndDateUpdated">End Date: </label>
+                                                <br>
+                                                <input type="date" name="input-seasonEndDateUpdated" id="input-seasonEndDateUpdated">
+                                                <br>
+                                                <label for="input-matchOfTheSeasonIDUpdated">Match of the Season ID: </label>
+                                                <br>
+                                                <input type="number" name="input-matchOfTheSeasonIDUpdated"
+                                                    id="input-matchOfTheSeasonIDUpdated">
+                                                <br>
+
+                                            </form>
                                         </div>
                                         <div class="modal-footer">
                                             <button type="button" class="btn btn-secondary"
@@ -95,7 +97,7 @@
                             </div>
 
 
-			</td>
+                        </td>
                     </tr>
                     {{/each}}
                 </tbody>
