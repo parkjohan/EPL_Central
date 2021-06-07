@@ -60,7 +60,61 @@
                         <td>{{this.teamAwayScore}}</td>
                         <td>{{this.teamWon}}</td>
                         <td class="input-td"><input id="delete-data" type="submit" value="Delete"></td>
-                        <td class="input-td"><input id="update-data" type="submit" value="Update"></td>
+                        <td class="input-td">
+				<input id="update-data" type="submit" value="Update" data-toggle="modal"
+                                data-target="#update-modal">
+                            <div class="modal fade" id="update-modal" tabindex="-1" role="dialog"
+                                aria-labelledby="update-modal" aria-hidden="true">
+                                <div class="modal-dialog" role="document">
+                                    <div class="modal-content">
+                                        <div class="modal-header">
+                                            <h5 class="modal-title" id="update-label">Update Match</h5>
+                                            <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                                                <span aria-hidden="true">&times;</span>
+                                            </button>
+                                        </div>
+                                        <div class="modal-body">
+                                            <form id="add-match-form">
+                				<label for="input-matchDate">Match Date: </label>
+                				<br>
+                				<input type="date" name="input-matchDate" id="input-matchDate">
+                				<br>
+                				<label for="input-teamHome">Home Team: </label>
+                				<br>
+                				<input type="text" name="input-teamHome" id="input-teamHome">
+                				<br>
+                				<label for="input-teamHomeScore">Team Home Score: </label>
+                				<br>
+                				<input type="number" name="input-teamHomeScore" id="input-teamHomeScore">
+                				<br>
+                				<label for="input-teamAway">Away Team: </label>
+                				<br>
+                				<input type="text" name="input-teamAway" id="input-teamAway">
+                				<br>
+                				<label for="input-teamAwayScore">Team Away Score: </label>
+                				<br>
+                				<input type="number" name="input-teamAwayScore" id="input-teamAwayScore">
+                				<br>
+                				<label for="input-teamWon">Team Won: </label>
+                				<br>
+                				<input type="text" name="input-teamWon" id="input-teamWon">
+                				<br>
+
+                
+            				</form>
+                                        </div>
+                                        <div class="modal-footer">
+                                            <button type="button" class="btn btn-secondary"
+                                                data-dismiss="modal">Close</button>
+                                            <button type="button" class="btn btn-primary">Update</button>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+
+
+			</td>
                     </tr>
                     {{/each}}
                 </tbody>
