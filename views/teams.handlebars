@@ -26,6 +26,10 @@
 
         </div>
         <div class="col-sm-8 text-left">
+            <label for="searchBar">
+                <input type="text" placeholder="Search.." id="searchBar">
+            </label>
+            <br>
             {{!-- Create a table --}}
             <table id="team-table">
 
@@ -46,7 +50,6 @@
 
                 {{!-- Body section --}}
                 <tbody>
-
                     {{!-- For each row --}}
                     {{#each data}}
                     <tr>

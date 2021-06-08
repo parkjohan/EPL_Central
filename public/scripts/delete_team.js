@@ -1,12 +1,11 @@
 let deleteTeamBtn = document.querySelectorAll("#delete-data");
-let idValue = deleteTeamBtn.parentElement.parentElement.childElement.value;
 
 Array.prototype.forEach.call(deleteTeamBtn, function addClickListener(deleteTeamBtn) {
     deleteTeamBtn.addEventListener('click', function (event) {
         // code here to handle click
         console.log("deleting...");
         var teamID = this.parentElement.value;
-        console.log("ID: " + idValue);
+        console.log("ID: " + this.parentElement.parentElement.firstChild);
         var payload = {
             'teamID': teamID
         }
